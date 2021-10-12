@@ -21,16 +21,18 @@ A basic workflow for such an incentive system may at a very high level look like
 
 These overall ideas are just a blueprint for development for speedrunning communities that may eventually end up in these communities self-organizing as a DAO. So the next immediate step is prototyping the idea with a concrete simple workflow. 
 
-### The Oracle problem
+## The Oracle problem
 The main problem we face is that of checking when some speedrunners has effectively attained an incentivized objective. For now, we will resort to hybrid smart contracts that rely on a centralized source as speedrun.com. 
 
-However, the process of getting sppedrun info on-chain from those kind of sites can be done inside a network of decentralized oracles, as [ChainLink](https://docs.chain.link/docs/request-and-receive-data/) that is able to get data from any API as that [provided by Speedrun](https://github.com/speedruncomorg/api). 
+However, the process of getting speedrun info on-chain from those kind of sites can be done inside a network of decentralized oracles, as [ChainLink](https://docs.chain.link/docs/request-and-receive-data/) that is able to get data from any API as that [provided by Speedrun](https://github.com/speedruncomorg/api). 
+
+This would in principle entail that there should be some sort of proof of "link to a speedrun account", which any user controlling one of those accounts may trigger via smart contracts. 
 
 
 ## Forward looking: decentralized speedrunning
 
 We can imagine a future in which speedruning communities move to decentralization. This however will require overcoming a number of challenges, beyond those mentioned above. 
 
-Ideally, the checking and measurement of speedruns could be done in a trustless way so that times and proofs of speedrun records can be attested in the blockchain witouth the need of sites as speedrun.com becoming an intermmediate stage. 
+Ideally, the checking and measurement of speedruns could be done in a trustless way so that times and proofs of speedrun records can be attested in the blockchain witouth the need of sites as speedrun.com becoming an intermediate stage. 
 
 

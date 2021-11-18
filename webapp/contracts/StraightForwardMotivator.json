@@ -1,0 +1,1433 @@
+{
+  "contractName": "StraightForwardMotivator",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "challengeId",
+          "type": "string"
+        },
+        {
+          "indexed": true,
+          "internalType": "string",
+          "name": "userId",
+          "type": "string"
+        },
+        {
+          "indexed": true,
+          "internalType": "string",
+          "name": "gameId",
+          "type": "string"
+        },
+        {
+          "indexed": true,
+          "internalType": "string",
+          "name": "levelId",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "time",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "prize",
+          "type": "uint256"
+        }
+      ],
+      "name": "ChallengePlaced",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_userId",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_gameId",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_levelId",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_time",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "_challengeId",
+          "type": "string"
+        }
+      ],
+      "name": "place_challenge",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_challengeId",
+          "type": "string"
+        }
+      ],
+      "name": "reclaim",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.7+commit.e28d00a7\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"challengeId\",\"type\":\"string\"},{\"indexed\":true,\"internalType\":\"string\",\"name\":\"userId\",\"type\":\"string\"},{\"indexed\":true,\"internalType\":\"string\",\"name\":\"gameId\",\"type\":\"string\"},{\"indexed\":true,\"internalType\":\"string\",\"name\":\"levelId\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"time\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"prize\",\"type\":\"uint256\"}],\"name\":\"ChallengePlaced\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_userId\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_gameId\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_levelId\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"_time\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"_challengeId\",\"type\":\"string\"}],\"name\":\"place_challenge\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_challengeId\",\"type\":\"string\"}],\"name\":\"reclaim\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"msicilia.eth\",\"kind\":\"dev\",\"methods\":{},\"title\":\"A barebones motivator, that simply sends the amounts on the challenges to the speedrunner on reclaim.\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/Users/msicilia/Desktop/dev/lrn/consensys/blockchain-developer-bootcamp-final-project/contracts/StraightForwardMotivator.sol\":\"StraightForwardMotivator\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/msicilia/Desktop/dev/lrn/consensys/blockchain-developer-bootcamp-final-project/contracts/ISpeedRunRepo.sol\":{\"keccak256\":\"0x0abe1a6728d42191421e4d4999f1982ad3a7379a7cd09d420988962947f59078\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://5afc8fae31d60538921ac2b73bf430224c52745a0c09356b114326d3c04e0d00\",\"dweb:/ipfs/QmaKYNnvDnucd44AxHcesPQSecoNYcfUdBhsZEbF7x6vaw\"]},\"/Users/msicilia/Desktop/dev/lrn/consensys/blockchain-developer-bootcamp-final-project/contracts/MotivatorBase.sol\":{\"keccak256\":\"0x86c51023ed526bc54a788e54826edb5a82735e0bb0211e1afd507ea38bdf306a\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://6fe7872620e6848e6504a21469e4911084d521e07be361f80e48e2bfc27426a0\",\"dweb:/ipfs/QmQduvtTzX5dxWBjGqSQxAh4CpuVzAiLMRkgo6UgikmWq3\"]},\"/Users/msicilia/Desktop/dev/lrn/consensys/blockchain-developer-bootcamp-final-project/contracts/StraightForwardMotivator.sol\":{\"keccak256\":\"0x7fa454624a4a5d5562ee19652912faaed73b57d3f55bb13b3e81f285640e600e\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://e463539577d46b1733832dc33c68cd6a24560ec40696766567d505ed877cc9fa\",\"dweb:/ipfs/QmUegaoAkU11WbTTYqXXD6sydCbakg5R6y4GNTEkb8rJUd\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: GPL-3.0\npragma solidity ^0.8.7;\n\nimport \"./MotivatorBase.sol\";\n\n/// @title A barebones motivator, that simply sends the amounts on the challenges to the speedrunner on reclaim.\n/// @author msicilia.eth\n\nabstract contract StraightForwardMotivator is MotivatorBase{\n    constructor(address _speedRunRepo) MotivatorBase(_speedRunRepo) {}\n\n    function reclaim(string calldata _challengeId) external override {\n        require(challenges[_challengeId].time != 0, \"ChallengeId not found.\");\n        Challenge memory ch = challenges[_challengeId];\n        if (repo.passed_mark(ch.userId, ch.gameId, ch.levelId, ch.time)){\n            // repo.getUserAddress(ch.userId);  ... and send the money\n        }\n    }\n}",
+  "sourcePath": "/Users/msicilia/Desktop/dev/lrn/consensys/blockchain-developer-bootcamp-final-project/contracts/StraightForwardMotivator.sol",
+  "ast": {
+    "absolutePath": "/Users/msicilia/Desktop/dev/lrn/consensys/blockchain-developer-bootcamp-final-project/contracts/StraightForwardMotivator.sol",
+    "exportedSymbols": {
+      "ISpeedRunRepo": [
+        35
+      ],
+      "MotivatorBase": [
+        198
+      ],
+      "StraightForwardMotivator": [
+        346
+      ]
+    },
+    "id": 347,
+    "license": "GPL-3.0",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 295,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".7"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "36:23:4"
+      },
+      {
+        "absolutePath": "/Users/msicilia/Desktop/dev/lrn/consensys/blockchain-developer-bootcamp-final-project/contracts/MotivatorBase.sol",
+        "file": "./MotivatorBase.sol",
+        "id": 296,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 347,
+        "sourceUnit": 199,
+        "src": "61:29:4",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": true,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 298,
+              "name": "MotivatorBase",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 198,
+              "src": "277:13:4"
+            },
+            "id": 299,
+            "nodeType": "InheritanceSpecifier",
+            "src": "277:13:4"
+          }
+        ],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 297,
+          "nodeType": "StructuredDocumentation",
+          "src": "92:138:4",
+          "text": "@title A barebones motivator, that simply sends the amounts on the challenges to the speedrunner on reclaim.\n @author msicilia.eth"
+        },
+        "fullyImplemented": true,
+        "id": 346,
+        "linearizedBaseContracts": [
+          346,
+          198
+        ],
+        "name": "StraightForwardMotivator",
+        "nameLocation": "249:24:4",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 307,
+              "nodeType": "Block",
+              "src": "360:2:4",
+              "statements": []
+            },
+            "id": 308,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "id": 304,
+                    "name": "_speedRunRepo",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 301,
+                    "src": "345:13:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  }
+                ],
+                "id": 305,
+                "kind": "baseConstructorSpecifier",
+                "modifierName": {
+                  "id": 303,
+                  "name": "MotivatorBase",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 198,
+                  "src": "331:13:4"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "331:28:4"
+              }
+            ],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 302,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 301,
+                  "mutability": "mutable",
+                  "name": "_speedRunRepo",
+                  "nameLocation": "316:13:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 308,
+                  "src": "308:21:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 300,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "308:7:4",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "307:23:4"
+            },
+            "returnParameters": {
+              "id": 306,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "360:0:4"
+            },
+            "scope": 346,
+            "src": "296:66:4",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "baseFunctions": [
+              129
+            ],
+            "body": {
+              "id": 344,
+              "nodeType": "Block",
+              "src": "433:297:4",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "commonType": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "id": 320,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "expression": {
+                            "baseExpression": {
+                              "id": 315,
+                              "name": "challenges",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 103,
+                              "src": "451:10:4",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Challenge_$84_storage_$",
+                                "typeString": "mapping(string memory => struct MotivatorBase.Challenge storage ref)"
+                              }
+                            },
+                            "id": 317,
+                            "indexExpression": {
+                              "id": 316,
+                              "name": "_challengeId",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 310,
+                              "src": "462:12:4",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_string_calldata_ptr",
+                                "typeString": "string calldata"
+                              }
+                            },
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "nodeType": "IndexAccess",
+                            "src": "451:24:4",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_Challenge_$84_storage",
+                              "typeString": "struct MotivatorBase.Challenge storage ref"
+                            }
+                          },
+                          "id": 318,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "time",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 79,
+                          "src": "451:29:4",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "!=",
+                        "rightExpression": {
+                          "hexValue": "30",
+                          "id": 319,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "484:1:4",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          "value": "0"
+                        },
+                        "src": "451:34:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "4368616c6c656e67654964206e6f7420666f756e642e",
+                        "id": 321,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "487:24:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_bec76e89ca4980f2cce9025d40fed91bdc2ce8fa13df4a2d59621ab2847e6ddd",
+                          "typeString": "literal_string \"ChallengeId not found.\""
+                        },
+                        "value": "ChallengeId not found."
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_bec76e89ca4980f2cce9025d40fed91bdc2ce8fa13df4a2d59621ab2847e6ddd",
+                          "typeString": "literal_string \"ChallengeId not found.\""
+                        }
+                      ],
+                      "id": 314,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "443:7:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 322,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "443:69:4",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 323,
+                  "nodeType": "ExpressionStatement",
+                  "src": "443:69:4"
+                },
+                {
+                  "assignments": [
+                    326
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 326,
+                      "mutability": "mutable",
+                      "name": "ch",
+                      "nameLocation": "539:2:4",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 344,
+                      "src": "522:19:4",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Challenge_$84_memory_ptr",
+                        "typeString": "struct MotivatorBase.Challenge"
+                      },
+                      "typeName": {
+                        "id": 325,
+                        "nodeType": "UserDefinedTypeName",
+                        "pathNode": {
+                          "id": 324,
+                          "name": "Challenge",
+                          "nodeType": "IdentifierPath",
+                          "referencedDeclaration": 84,
+                          "src": "522:9:4"
+                        },
+                        "referencedDeclaration": 84,
+                        "src": "522:9:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Challenge_$84_storage_ptr",
+                          "typeString": "struct MotivatorBase.Challenge"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 330,
+                  "initialValue": {
+                    "baseExpression": {
+                      "id": 327,
+                      "name": "challenges",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 103,
+                      "src": "544:10:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Challenge_$84_storage_$",
+                        "typeString": "mapping(string memory => struct MotivatorBase.Challenge storage ref)"
+                      }
+                    },
+                    "id": 329,
+                    "indexExpression": {
+                      "id": 328,
+                      "name": "_challengeId",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 310,
+                      "src": "555:12:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_calldata_ptr",
+                        "typeString": "string calldata"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "544:24:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Challenge_$84_storage",
+                      "typeString": "struct MotivatorBase.Challenge storage ref"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "522:46:4"
+                },
+                {
+                  "condition": {
+                    "arguments": [
+                      {
+                        "expression": {
+                          "id": 333,
+                          "name": "ch",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 326,
+                          "src": "599:2:4",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Challenge_$84_memory_ptr",
+                            "typeString": "struct MotivatorBase.Challenge memory"
+                          }
+                        },
+                        "id": 334,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "userId",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 73,
+                        "src": "599:9:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "expression": {
+                          "id": 335,
+                          "name": "ch",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 326,
+                          "src": "610:2:4",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Challenge_$84_memory_ptr",
+                            "typeString": "struct MotivatorBase.Challenge memory"
+                          }
+                        },
+                        "id": 336,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "gameId",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 75,
+                        "src": "610:9:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "expression": {
+                          "id": 337,
+                          "name": "ch",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 326,
+                          "src": "621:2:4",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Challenge_$84_memory_ptr",
+                            "typeString": "struct MotivatorBase.Challenge memory"
+                          }
+                        },
+                        "id": 338,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "levelId",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 77,
+                        "src": "621:10:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "expression": {
+                          "id": 339,
+                          "name": "ch",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 326,
+                          "src": "633:2:4",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Challenge_$84_memory_ptr",
+                            "typeString": "struct MotivatorBase.Challenge memory"
+                          }
+                        },
+                        "id": 340,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "time",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 79,
+                        "src": "633:7:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "id": 331,
+                        "name": "repo",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 108,
+                        "src": "582:4:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_ISpeedRunRepo_$35",
+                          "typeString": "contract ISpeedRunRepo"
+                        }
+                      },
+                      "id": 332,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "passed_mark",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 34,
+                      "src": "582:16:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_view$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_uint256_$returns$_t_bool_$",
+                        "typeString": "function (string memory,string memory,string memory,uint256) view external returns (bool)"
+                      }
+                    },
+                    "id": 341,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "582:59:4",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 343,
+                  "nodeType": "IfStatement",
+                  "src": "578:146:4",
+                  "trueBody": {
+                    "id": 342,
+                    "nodeType": "Block",
+                    "src": "642:82:4",
+                    "statements": []
+                  }
+                }
+              ]
+            },
+            "functionSelector": "a40d52ea",
+            "id": 345,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "reclaim",
+            "nameLocation": "377:7:4",
+            "nodeType": "FunctionDefinition",
+            "overrides": {
+              "id": 312,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "424:8:4"
+            },
+            "parameters": {
+              "id": 311,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 310,
+                  "mutability": "mutable",
+                  "name": "_challengeId",
+                  "nameLocation": "401:12:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 345,
+                  "src": "385:28:4",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 309,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "385:6:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "384:30:4"
+            },
+            "returnParameters": {
+              "id": 313,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "433:0:4"
+            },
+            "scope": 346,
+            "src": "368:362:4",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 347,
+        "src": "231:501:4",
+        "usedErrors": []
+      }
+    ],
+    "src": "36:696:4"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/msicilia/Desktop/dev/lrn/consensys/blockchain-developer-bootcamp-final-project/contracts/StraightForwardMotivator.sol",
+    "exportedSymbols": {
+      "ISpeedRunRepo": [
+        35
+      ],
+      "MotivatorBase": [
+        198
+      ],
+      "StraightForwardMotivator": [
+        346
+      ]
+    },
+    "id": 347,
+    "license": "GPL-3.0",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 295,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".7"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "36:23:4"
+      },
+      {
+        "absolutePath": "/Users/msicilia/Desktop/dev/lrn/consensys/blockchain-developer-bootcamp-final-project/contracts/MotivatorBase.sol",
+        "file": "./MotivatorBase.sol",
+        "id": 296,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 347,
+        "sourceUnit": 199,
+        "src": "61:29:4",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": true,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 298,
+              "name": "MotivatorBase",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 198,
+              "src": "277:13:4"
+            },
+            "id": 299,
+            "nodeType": "InheritanceSpecifier",
+            "src": "277:13:4"
+          }
+        ],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 297,
+          "nodeType": "StructuredDocumentation",
+          "src": "92:138:4",
+          "text": "@title A barebones motivator, that simply sends the amounts on the challenges to the speedrunner on reclaim.\n @author msicilia.eth"
+        },
+        "fullyImplemented": true,
+        "id": 346,
+        "linearizedBaseContracts": [
+          346,
+          198
+        ],
+        "name": "StraightForwardMotivator",
+        "nameLocation": "249:24:4",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 307,
+              "nodeType": "Block",
+              "src": "360:2:4",
+              "statements": []
+            },
+            "id": 308,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "id": 304,
+                    "name": "_speedRunRepo",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 301,
+                    "src": "345:13:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  }
+                ],
+                "id": 305,
+                "kind": "baseConstructorSpecifier",
+                "modifierName": {
+                  "id": 303,
+                  "name": "MotivatorBase",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 198,
+                  "src": "331:13:4"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "331:28:4"
+              }
+            ],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 302,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 301,
+                  "mutability": "mutable",
+                  "name": "_speedRunRepo",
+                  "nameLocation": "316:13:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 308,
+                  "src": "308:21:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 300,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "308:7:4",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "307:23:4"
+            },
+            "returnParameters": {
+              "id": 306,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "360:0:4"
+            },
+            "scope": 346,
+            "src": "296:66:4",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "baseFunctions": [
+              129
+            ],
+            "body": {
+              "id": 344,
+              "nodeType": "Block",
+              "src": "433:297:4",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "commonType": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "id": 320,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "expression": {
+                            "baseExpression": {
+                              "id": 315,
+                              "name": "challenges",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 103,
+                              "src": "451:10:4",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Challenge_$84_storage_$",
+                                "typeString": "mapping(string memory => struct MotivatorBase.Challenge storage ref)"
+                              }
+                            },
+                            "id": 317,
+                            "indexExpression": {
+                              "id": 316,
+                              "name": "_challengeId",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 310,
+                              "src": "462:12:4",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_string_calldata_ptr",
+                                "typeString": "string calldata"
+                              }
+                            },
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "nodeType": "IndexAccess",
+                            "src": "451:24:4",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_Challenge_$84_storage",
+                              "typeString": "struct MotivatorBase.Challenge storage ref"
+                            }
+                          },
+                          "id": 318,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "time",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 79,
+                          "src": "451:29:4",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "!=",
+                        "rightExpression": {
+                          "hexValue": "30",
+                          "id": 319,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "484:1:4",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          "value": "0"
+                        },
+                        "src": "451:34:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "4368616c6c656e67654964206e6f7420666f756e642e",
+                        "id": 321,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "487:24:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_bec76e89ca4980f2cce9025d40fed91bdc2ce8fa13df4a2d59621ab2847e6ddd",
+                          "typeString": "literal_string \"ChallengeId not found.\""
+                        },
+                        "value": "ChallengeId not found."
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_bec76e89ca4980f2cce9025d40fed91bdc2ce8fa13df4a2d59621ab2847e6ddd",
+                          "typeString": "literal_string \"ChallengeId not found.\""
+                        }
+                      ],
+                      "id": 314,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "443:7:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 322,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "443:69:4",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 323,
+                  "nodeType": "ExpressionStatement",
+                  "src": "443:69:4"
+                },
+                {
+                  "assignments": [
+                    326
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 326,
+                      "mutability": "mutable",
+                      "name": "ch",
+                      "nameLocation": "539:2:4",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 344,
+                      "src": "522:19:4",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Challenge_$84_memory_ptr",
+                        "typeString": "struct MotivatorBase.Challenge"
+                      },
+                      "typeName": {
+                        "id": 325,
+                        "nodeType": "UserDefinedTypeName",
+                        "pathNode": {
+                          "id": 324,
+                          "name": "Challenge",
+                          "nodeType": "IdentifierPath",
+                          "referencedDeclaration": 84,
+                          "src": "522:9:4"
+                        },
+                        "referencedDeclaration": 84,
+                        "src": "522:9:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Challenge_$84_storage_ptr",
+                          "typeString": "struct MotivatorBase.Challenge"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 330,
+                  "initialValue": {
+                    "baseExpression": {
+                      "id": 327,
+                      "name": "challenges",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 103,
+                      "src": "544:10:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Challenge_$84_storage_$",
+                        "typeString": "mapping(string memory => struct MotivatorBase.Challenge storage ref)"
+                      }
+                    },
+                    "id": 329,
+                    "indexExpression": {
+                      "id": 328,
+                      "name": "_challengeId",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 310,
+                      "src": "555:12:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_calldata_ptr",
+                        "typeString": "string calldata"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "544:24:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Challenge_$84_storage",
+                      "typeString": "struct MotivatorBase.Challenge storage ref"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "522:46:4"
+                },
+                {
+                  "condition": {
+                    "arguments": [
+                      {
+                        "expression": {
+                          "id": 333,
+                          "name": "ch",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 326,
+                          "src": "599:2:4",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Challenge_$84_memory_ptr",
+                            "typeString": "struct MotivatorBase.Challenge memory"
+                          }
+                        },
+                        "id": 334,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "userId",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 73,
+                        "src": "599:9:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "expression": {
+                          "id": 335,
+                          "name": "ch",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 326,
+                          "src": "610:2:4",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Challenge_$84_memory_ptr",
+                            "typeString": "struct MotivatorBase.Challenge memory"
+                          }
+                        },
+                        "id": 336,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "gameId",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 75,
+                        "src": "610:9:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "expression": {
+                          "id": 337,
+                          "name": "ch",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 326,
+                          "src": "621:2:4",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Challenge_$84_memory_ptr",
+                            "typeString": "struct MotivatorBase.Challenge memory"
+                          }
+                        },
+                        "id": 338,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "levelId",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 77,
+                        "src": "621:10:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "expression": {
+                          "id": 339,
+                          "name": "ch",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 326,
+                          "src": "633:2:4",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Challenge_$84_memory_ptr",
+                            "typeString": "struct MotivatorBase.Challenge memory"
+                          }
+                        },
+                        "id": 340,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "time",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 79,
+                        "src": "633:7:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "id": 331,
+                        "name": "repo",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 108,
+                        "src": "582:4:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_ISpeedRunRepo_$35",
+                          "typeString": "contract ISpeedRunRepo"
+                        }
+                      },
+                      "id": 332,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "passed_mark",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 34,
+                      "src": "582:16:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_view$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_uint256_$returns$_t_bool_$",
+                        "typeString": "function (string memory,string memory,string memory,uint256) view external returns (bool)"
+                      }
+                    },
+                    "id": 341,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "582:59:4",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 343,
+                  "nodeType": "IfStatement",
+                  "src": "578:146:4",
+                  "trueBody": {
+                    "id": 342,
+                    "nodeType": "Block",
+                    "src": "642:82:4",
+                    "statements": []
+                  }
+                }
+              ]
+            },
+            "functionSelector": "a40d52ea",
+            "id": 345,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "reclaim",
+            "nameLocation": "377:7:4",
+            "nodeType": "FunctionDefinition",
+            "overrides": {
+              "id": 312,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "424:8:4"
+            },
+            "parameters": {
+              "id": 311,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 310,
+                  "mutability": "mutable",
+                  "name": "_challengeId",
+                  "nameLocation": "401:12:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 345,
+                  "src": "385:28:4",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 309,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "385:6:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "384:30:4"
+            },
+            "returnParameters": {
+              "id": 313,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "433:0:4"
+            },
+            "scope": 346,
+            "src": "368:362:4",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 347,
+        "src": "231:501:4",
+        "usedErrors": []
+      }
+    ],
+    "src": "36:696:4"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.7+commit.e28d00a7.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.3.3",
+  "updatedAt": "2021-11-16T17:14:17.879Z",
+  "devdoc": {
+    "author": "msicilia.eth",
+    "kind": "dev",
+    "methods": {},
+    "title": "A barebones motivator, that simply sends the amounts on the challenges to the speedrunner on reclaim.",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

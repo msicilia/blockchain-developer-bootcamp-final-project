@@ -1,0 +1,26 @@
+{
+  "name": "blockchain-developer-bootcamp-final-project",
+  "version": "1.0.0",
+  "description": "Speedrunning is when an individual attempts to **beat part or all of a video game as quickly as possible**. This can include individual levels, specific objectives, or unique limitations as decided by the community or player. Speedrunning is a social activity, where on-line communities gather around [some particular games](https://en.wikipedia.org/wiki/List_of_video_games_notable_for_speedrunning) and improve, compete and have fun around the idea of beating marks.",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/msicilia/blockchain-developer-bootcamp-final-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/msicilia/blockchain-developer-bootcamp-final-project/issues"
+  },
+  "homepage": "https://github.com/msicilia/blockchain-developer-bootcamp-final-project#readme",
+  "dependencies": {
+    "@truffle/hdwallet-provider": "^1.6.0",
+    "dotenv": "^10.0.0"
+  }
+}

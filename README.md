@@ -1,5 +1,5 @@
 # Speed the Speedrunners!
- 
+
 Speedrunning is when an individual attempts to **beat part or all of a video game as quickly as possible**. This can include individual levels, specific objectives, or unique limitations as decided by the community or player.
 Speedrunning is a social activity, where on-line communities gather around [some particular games](https://en.wikipedia.org/wiki/List_of_video_games_notable_for_speedrunning) and improve, compete and have fun around the idea of beating marks. 
 
@@ -36,3 +36,12 @@ We can imagine a future in which speedruning communities move to decentralizatio
 Ideally, the checking and measurement of speedruns could be done in a trustless way so that times and proofs of speedrun records can be attested in the blockchain witouth the need of sites as speedrun.com becoming an intermediate stage. 
 
 
+# Folder structure
+
+The main folder contains the [truffle](https://trufflesuite.com/)-generated structure for the project. The `webapp` folder is the [Next.js](https://nextjs.org/) frontend for the DApp.  
+
+# Deployment in testnet
+
+# Credits
+
+`msicilia.eth`

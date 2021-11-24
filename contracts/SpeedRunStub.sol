@@ -10,7 +10,10 @@ contract SpeedRunRepo_Stub is ISpeedRunRepo {
 
     mapping (string => SpeedRunner) public runners;
     mapping (string => mapping (string => mapping (string => Run))) runs; 
-    function add_runner(string calldata _userName, string calldata _userId, address _addr) external{
+
+    /// @dev Note this naive implementation allows anybody to steal the prizes of others by simply 
+    ///      registering again to other address.
+     function add_runner(string calldata _userName, string calldata _userId, address _addr) external{
         runners[_userId] = SpeedRunner(_userName, _userId, _addr);
     }
 

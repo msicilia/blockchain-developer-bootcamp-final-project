@@ -6,7 +6,7 @@ import "./MotivatorBase.sol";
 /// @title A barebones motivator, that simply sends the amounts on the challenges to the speedrunner on reclaim.
 /// @author msicilia.eth
 
-abstract contract StraightForwardMotivator is MotivatorBase{
+contract StraightForwardMotivator is MotivatorBase{
     constructor(address _speedRunRepo) MotivatorBase(_speedRunRepo) {}
 
     function reclaim(string calldata _challengeId) external override {

@@ -1,24 +1,30 @@
 import React from 'react'
 import { useRef, useState } from 'react';
 import UserElement from '../components/UserElement.js'
+import useIsValidNetwork from '../hooks/useIsValidNetwork';
 
 
-const register_player = () => {
+const Register_player = () => {
     const [getResult, setGetResult] = useState(null);
     const get_name = useRef(null);
+    const { isValidNetwork } = useIsValidNetwork();
+
 
     const getSpeedRunners = async () => {
+        if (isValidNetwork){
         const name = get_name.current.value;
         const res = await fetch(`https://www.speedrun.com/api/v1/users?name=${name}`);
         const users = await res.json();
         setGetResult(users.data);
+        }else{
+            alert("Metamask is not connected to a valid network");
+        }
       }
 
-    // console.log(speedrunners);
     return (
         <div>
             <h1>register an address</h1>
-            <label>Search speedrunner names:</label>
+            <label>Search speedrunner names, then click on them to update:</label>
             <input type="text" className="formInput" ref={get_name}/>
             <button onClick={getSpeedRunners} className="submitButton">Search</button>
             { getResult && getResult.map((sr) =>
@@ -29,16 +35,4 @@ const register_player = () => {
     )
 }
 
-export default register_player
-/*
-export const getStaticProps = async (username) => {
-  const res = await fetch(`https://www.speedrun.com/api/v1/users?name=abc`);
-  const users = await res.json();
-  console.log(users);
-  return {
-      props: {
-          speedrunners: users.data, 
-      },
-  }
-}
-*/
+export default Register_player

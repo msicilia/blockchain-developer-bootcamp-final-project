@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-3.0
-pragma solidity ^0.8.7;
+pragma solidity ^0.8.10;
 
 import "./MotivatorBase.sol";
 
@@ -9,7 +9,7 @@ import "./MotivatorBase.sol";
 contract StraightForwardMotivator is MotivatorBase{
     constructor(address _speedRunRepo) MotivatorBase(_speedRunRepo) {}
 
-    function reclaim(string calldata _challengeId) external override {
+    function reclaim_prize(string calldata _challengeId) external override {
         require(challenges[_challengeId].time != 0, "ChallengeId not found.");
         Challenge memory ch = challenges[_challengeId];
         if (repo.passed_mark(ch.userId, ch.gameId, ch.levelId, ch.time)){

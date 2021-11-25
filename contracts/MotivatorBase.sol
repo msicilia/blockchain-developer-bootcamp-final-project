@@ -1,13 +1,13 @@
 // SPDX-License-Identifier: GPL-3.0
-pragma solidity ^0.8.7;
+pragma solidity ^0.8.10;
 /// @title A motivating mechanism for speedrunners.
 /// @author msicilia.eth
 /// @notice This interface defines the basic interface for a variety of possible mechanisms.
 
 import "./ISpeedRunRepo.sol";
+import "./Ownable.sol";
 
-
-abstract contract MotivatorBase{
+abstract contract MotivatorBase is Ownable{
     struct Challenge {
         string userId;
         string gameId;
@@ -34,7 +34,7 @@ abstract contract MotivatorBase{
         speedrunRepo = _spreedrunRepo;
         repo = ISpeedRunRepo(_spreedrunRepo);
     }
-    function reclaim(string calldata challengeId) external virtual;
+    function reclaim_prize(string calldata challengeId) external virtual;
     function place_challenge(string calldata _userId, string calldata _gameId, string calldata _levelId,
                              uint _time, string calldata _challengeId) external virtual payable{
         require(msg.value > 0, "Challenges need to provide funds for rewarding speedrunners");
@@ -44,5 +44,8 @@ abstract contract MotivatorBase{
         challenges[_challengeId] = c;
         emit ChallengePlaced(_challengeId, _userId, _gameId, _levelId, _time, msg.value);
     }
+    
+    function return_funds_and_destroy() external onlyOwner {
 
+    }
 }

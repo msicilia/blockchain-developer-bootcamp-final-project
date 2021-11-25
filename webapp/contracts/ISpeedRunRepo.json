@@ -5,6 +5,57 @@
       "inputs": [
         {
           "internalType": "string",
+          "name": "_userName",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_userId",
+          "type": "string"
+        },
+        {
+          "internalType": "address",
+          "name": "_addr",
+          "type": "address"
+        }
+      ],
+      "name": "add_runner",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_userId",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_gameId",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_levelId",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "mark",
+          "type": "uint256"
+        }
+      ],
+      "name": "add_run",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
           "name": "userId",
           "type": "string"
         },
@@ -36,7 +87,7 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.8.7+commit.e28d00a7\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"string\",\"name\":\"userId\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"gameId\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"levelId\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"mark\",\"type\":\"uint256\"}],\"name\":\"passed_mark\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"msicilia.eth\",\"kind\":\"dev\",\"methods\":{\"passed_mark(string,string,string,uint256)\":{\"params\":{\"gameId\":\"The id of the game.\",\"levelId\":\"The id of the level of the game.\",\"mark\":\"The time ckeched. \",\"userId\":\"The SppedRum.com `userId` being queried.\"},\"returns\":{\"_0\":\"`true` if there is verified evidence in the repo that the user has a mark equal or better than `mark`.\"}}},\"title\":\"A repository of data from Speedrun.com\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"passed_mark(string,string,string,uint256)\":{\"notice\":\"It returns `false` if no evidence found (but it might be that such evidence is yet at SpeedRun.com)\"}},\"notice\":\"This interface defines the data structures and the interface of data repos for SpeedRun.com.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"/Users/msicilia/Desktop/dev/lrn/consensys/blockchain-developer-bootcamp-final-project/contracts/ISpeedRunRepo.sol\":\"ISpeedRunRepo\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/msicilia/Desktop/dev/lrn/consensys/blockchain-developer-bootcamp-final-project/contracts/ISpeedRunRepo.sol\":{\"keccak256\":\"0x0abe1a6728d42191421e4d4999f1982ad3a7379a7cd09d420988962947f59078\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://5afc8fae31d60538921ac2b73bf430224c52745a0c09356b114326d3c04e0d00\",\"dweb:/ipfs/QmaKYNnvDnucd44AxHcesPQSecoNYcfUdBhsZEbF7x6vaw\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.10+commit.fc410830\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_userId\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_gameId\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_levelId\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"mark\",\"type\":\"uint256\"}],\"name\":\"add_run\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_userName\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_userId\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"_addr\",\"type\":\"address\"}],\"name\":\"add_runner\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"userId\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"gameId\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"levelId\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"mark\",\"type\":\"uint256\"}],\"name\":\"passed_mark\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"msicilia.eth\",\"kind\":\"dev\",\"methods\":{\"add_runner(string,string,address)\":{\"params\":{\"_addr\":\"An address associated to the user.\",\"_userId\":\"The SpeedRunner id of the user.\",\"_userName\":\"The name of the SpeedRun.com user\"}},\"passed_mark(string,string,string,uint256)\":{\"params\":{\"gameId\":\"The id of the game.\",\"levelId\":\"The id of the level of the game.\",\"mark\":\"The time ckeched. \",\"userId\":\"The SppedRum.com `userId` being queried.\"},\"returns\":{\"_0\":\"`true` if there is verified evidence in the repo that the user has a mark equal or better than `mark`.\"}}},\"title\":\"A repository of data from Speedrun.com\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"passed_mark(string,string,string,uint256)\":{\"notice\":\"It returns `false` if no evidence found (but it might be that such evidence is yet at SpeedRun.com)\"}},\"notice\":\"This interface defines the data structures and the interface of data repos for SpeedRun.com.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/ISpeedRunRepo.sol\":\"ISpeedRunRepo\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/ISpeedRunRepo.sol\":{\"keccak256\":\"0x5fc662adbcdbd9c48b4a92dfa3d03625919c02ee4f868ae4b02e2d2c24c0fb51\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://52d7be6eced0fa2b2ef6968e4250edb107d38811700bd328c022733f3c53a395\",\"dweb:/ipfs/QmYdSdpEXTfgSf21NSuBKeyUwi1aYiuTtb28roPt5pNJxh\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "immutableReferences": {},
@@ -44,63 +95,64 @@
   "deployedGeneratedSources": [],
   "sourceMap": "",
   "deployedSourceMap": "",
-  "source": "// SPDX-License-Identifier: GPL-3.0\npragma solidity ^0.8.7;\n/// @title A repository of data from Speedrun.com\n/// @author msicilia.eth\n/// @notice This interface defines the data structures and the interface of data repos for SpeedRun.com.\ninterface ISpeedRunRepo{\n    /// @notice This is minimal information from a SpeedRun.com user.\n    /// @dev Note that username corresponds to `international` names according to SpeedRun API. \n    /// @dev Note field `userName` is not strictly necessary, but is kept for the readability of events. \n    struct SpeedRunner{\n        string userName; \n        string userId;\n        address addr;\n    }\n    /// @notice This is minimal information from a concrete speed run of `userId`. \n    /// @dev Note Field `primaryTime` is the one used in the leaderboards at SpeedRun.com. \n    /// @dev Note Field `primaryTime` is in seconds, the API allows for miliseconds (float) but they are to be truncated.\n    struct Run{\n        string gameId;\n        string levelId;\n        string runId;\n        uint primaryTime;\n        string userId;\n    }\n    /// @param userId The SppedRum.com `userId` being queried.\n    /// @param gameId The id of the game.\n    /// @param levelId The id of the level of the game.\n    /// @param mark The time ckeched. \n    /// @return `true` if there is verified evidence in the repo that the user has a mark equal or better than `mark`.\n    /// @notice It returns `false` if no evidence found (but it might be that such evidence is yet at SpeedRun.com)\n    function  passed_mark(string calldata userId, string calldata gameId, string calldata levelId, uint mark) external view returns (bool);\n}",
+  "source": "// SPDX-License-Identifier: GPL-3.0\npragma solidity ^0.8.10;\n/// @title A repository of data from Speedrun.com\n/// @author msicilia.eth\n/// @notice This interface defines the data structures and the interface of data repos for SpeedRun.com.\ninterface ISpeedRunRepo{\n    /// @notice This is minimal information from a SpeedRun.com user.\n    /// @dev Note that username corresponds to `international` names according to SpeedRun API. \n    /// @dev Note field `userName` is not strictly necessary, but is kept for the readability of events. \n    struct SpeedRunner{\n        string userName; \n        string userId;\n        address addr;\n    }\n    /// @notice This is minimal information from a concrete speed run of `userId`. \n    /// @dev Note Field `primaryTime` is the one used in the leaderboards at SpeedRun.com. \n    /// @dev Note Field `primaryTime` is in seconds, the API allows for miliseconds (float) but they are to be truncated.\n    struct Run{\n        string gameId;\n        string levelId;\n        string runId;\n        uint primaryTime;\n        string userId;\n    }\n    /// @param _userName The name of the SpeedRun.com user\n    /// @param _userId The SpeedRunner id of the user.\n    /// @param _addr An address associated to the user.\n    function add_runner(string calldata _userName, string calldata _userId, address _addr) external;\n\n    ///\n    function add_run(string calldata _userId, string calldata _gameId, string calldata _levelId, uint mark) external;\n\n    /// @param userId The SppedRum.com `userId` being queried.\n    /// @param gameId The id of the game.\n    /// @param levelId The id of the level of the game.\n    /// @param mark The time ckeched. \n    /// @return `true` if there is verified evidence in the repo that the user has a mark equal or better than `mark`.\n    /// @notice It returns `false` if no evidence found (but it might be that such evidence is yet at SpeedRun.com)\n    function  passed_mark(string calldata userId, string calldata gameId, string calldata levelId, uint mark) external view returns (bool);\n}",
   "sourcePath": "/Users/msicilia/Desktop/dev/lrn/consensys/blockchain-developer-bootcamp-final-project/contracts/ISpeedRunRepo.sol",
   "ast": {
-    "absolutePath": "/Users/msicilia/Desktop/dev/lrn/consensys/blockchain-developer-bootcamp-final-project/contracts/ISpeedRunRepo.sol",
+    "absolutePath": "project:/contracts/ISpeedRunRepo.sol",
     "exportedSymbols": {
       "ISpeedRunRepo": [
-        35
+        2150
       ]
     },
-    "id": 36,
+    "id": 2151,
     "license": "GPL-3.0",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1,
+        "id": 2095,
         "literals": [
           "solidity",
           "^",
           "0.8",
-          ".7"
+          ".10"
         ],
         "nodeType": "PragmaDirective",
-        "src": "36:23:0"
+        "src": "36:24:11"
       },
       {
         "abstract": false,
         "baseContracts": [],
+        "canonicalName": "ISpeedRunRepo",
         "contractDependencies": [],
         "contractKind": "interface",
         "documentation": {
-          "id": 2,
+          "id": 2096,
           "nodeType": "StructuredDocumentation",
-          "src": "60:180:0",
+          "src": "61:180:11",
           "text": "@title A repository of data from Speedrun.com\n @author msicilia.eth\n @notice This interface defines the data structures and the interface of data repos for SpeedRun.com."
         },
         "fullyImplemented": false,
-        "id": 35,
+        "id": 2150,
         "linearizedBaseContracts": [
-          35
+          2150
         ],
         "name": "ISpeedRunRepo",
-        "nameLocation": "250:13:0",
+        "nameLocation": "251:13:11",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "ISpeedRunRepo.SpeedRunner",
-            "id": 9,
+            "id": 2103,
             "members": [
               {
                 "constant": false,
-                "id": 4,
+                "id": 2098,
                 "mutability": "mutable",
                 "name": "userName",
-                "nameLocation": "577:8:0",
+                "nameLocation": "578:8:11",
                 "nodeType": "VariableDeclaration",
-                "scope": 9,
-                "src": "570:15:0",
+                "scope": 2103,
+                "src": "571:15:11",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -108,10 +160,10 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 3,
+                  "id": 2097,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
-                  "src": "570:6:0",
+                  "src": "571:6:11",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_storage_ptr",
                     "typeString": "string"
@@ -121,13 +173,13 @@
               },
               {
                 "constant": false,
-                "id": 6,
+                "id": 2100,
                 "mutability": "mutable",
                 "name": "userId",
-                "nameLocation": "603:6:0",
+                "nameLocation": "604:6:11",
                 "nodeType": "VariableDeclaration",
-                "scope": 9,
-                "src": "596:13:0",
+                "scope": 2103,
+                "src": "597:13:11",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -135,10 +187,10 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 5,
+                  "id": 2099,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
-                  "src": "596:6:0",
+                  "src": "597:6:11",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_storage_ptr",
                     "typeString": "string"
@@ -148,13 +200,13 @@
               },
               {
                 "constant": false,
-                "id": 8,
+                "id": 2102,
                 "mutability": "mutable",
                 "name": "addr",
-                "nameLocation": "627:4:0",
+                "nameLocation": "628:4:11",
                 "nodeType": "VariableDeclaration",
-                "scope": 9,
-                "src": "619:12:0",
+                "scope": 2103,
+                "src": "620:12:11",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -162,10 +214,10 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 7,
+                  "id": 2101,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
-                  "src": "619:7:0",
+                  "src": "620:7:11",
                   "stateMutability": "nonpayable",
                   "typeDescriptions": {
                     "typeIdentifier": "t_address",
@@ -176,25 +228,25 @@
               }
             ],
             "name": "SpeedRunner",
-            "nameLocation": "549:11:0",
+            "nameLocation": "550:11:11",
             "nodeType": "StructDefinition",
-            "scope": 35,
-            "src": "542:96:0",
+            "scope": 2150,
+            "src": "543:96:11",
             "visibility": "public"
           },
           {
             "canonicalName": "ISpeedRunRepo.Run",
-            "id": 20,
+            "id": 2114,
             "members": [
               {
                 "constant": false,
-                "id": 11,
+                "id": 2105,
                 "mutability": "mutable",
                 "name": "gameId",
-                "nameLocation": "968:6:0",
+                "nameLocation": "969:6:11",
                 "nodeType": "VariableDeclaration",
-                "scope": 20,
-                "src": "961:13:0",
+                "scope": 2114,
+                "src": "962:13:11",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -202,10 +254,10 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 10,
+                  "id": 2104,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
-                  "src": "961:6:0",
+                  "src": "962:6:11",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_storage_ptr",
                     "typeString": "string"
@@ -215,13 +267,13 @@
               },
               {
                 "constant": false,
-                "id": 13,
+                "id": 2107,
                 "mutability": "mutable",
                 "name": "levelId",
-                "nameLocation": "991:7:0",
+                "nameLocation": "992:7:11",
                 "nodeType": "VariableDeclaration",
-                "scope": 20,
-                "src": "984:14:0",
+                "scope": 2114,
+                "src": "985:14:11",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -229,10 +281,10 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 12,
+                  "id": 2106,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
-                  "src": "984:6:0",
+                  "src": "985:6:11",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_storage_ptr",
                     "typeString": "string"
@@ -242,13 +294,13 @@
               },
               {
                 "constant": false,
-                "id": 15,
+                "id": 2109,
                 "mutability": "mutable",
                 "name": "runId",
-                "nameLocation": "1015:5:0",
+                "nameLocation": "1016:5:11",
                 "nodeType": "VariableDeclaration",
-                "scope": 20,
-                "src": "1008:12:0",
+                "scope": 2114,
+                "src": "1009:12:11",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -256,10 +308,10 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 14,
+                  "id": 2108,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
-                  "src": "1008:6:0",
+                  "src": "1009:6:11",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_storage_ptr",
                     "typeString": "string"
@@ -269,13 +321,13 @@
               },
               {
                 "constant": false,
-                "id": 17,
+                "id": 2111,
                 "mutability": "mutable",
                 "name": "primaryTime",
-                "nameLocation": "1035:11:0",
+                "nameLocation": "1036:11:11",
                 "nodeType": "VariableDeclaration",
-                "scope": 20,
-                "src": "1030:16:0",
+                "scope": 2114,
+                "src": "1031:16:11",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -283,10 +335,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 16,
+                  "id": 2110,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
-                  "src": "1030:4:0",
+                  "src": "1031:4:11",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -296,13 +348,13 @@
               },
               {
                 "constant": false,
-                "id": 19,
+                "id": 2113,
                 "mutability": "mutable",
                 "name": "userId",
-                "nameLocation": "1063:6:0",
+                "nameLocation": "1064:6:11",
                 "nodeType": "VariableDeclaration",
-                "scope": 20,
-                "src": "1056:13:0",
+                "scope": 2114,
+                "src": "1057:13:11",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -310,10 +362,10 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 18,
+                  "id": 2112,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
-                  "src": "1056:6:0",
+                  "src": "1057:6:11",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_storage_ptr",
                     "typeString": "string"
@@ -323,40 +375,40 @@
               }
             ],
             "name": "Run",
-            "nameLocation": "948:3:0",
+            "nameLocation": "949:3:11",
             "nodeType": "StructDefinition",
-            "scope": 35,
-            "src": "941:135:0",
+            "scope": 2150,
+            "src": "942:135:11",
             "visibility": "public"
           },
           {
             "documentation": {
-              "id": 21,
+              "id": 2115,
               "nodeType": "StructuredDocumentation",
-              "src": "1081:430:0",
-              "text": "@param userId The SppedRum.com `userId` being queried.\n @param gameId The id of the game.\n @param levelId The id of the level of the game.\n @param mark The time ckeched. \n @return `true` if there is verified evidence in the repo that the user has a mark equal or better than `mark`.\n @notice It returns `false` if no evidence found (but it might be that such evidence is yet at SpeedRun.com)"
+              "src": "1082:165:11",
+              "text": "@param _userName The name of the SpeedRun.com user\n @param _userId The SpeedRunner id of the user.\n @param _addr An address associated to the user."
             },
-            "functionSelector": "a89f90cf",
-            "id": 34,
+            "functionSelector": "42e315ee",
+            "id": 2124,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
-            "name": "passed_mark",
-            "nameLocation": "1526:11:0",
+            "name": "add_runner",
+            "nameLocation": "1261:10:11",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 30,
+              "id": 2122,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23,
+                  "id": 2117,
                   "mutability": "mutable",
-                  "name": "userId",
-                  "nameLocation": "1554:6:0",
+                  "name": "_userName",
+                  "nameLocation": "1288:9:11",
                   "nodeType": "VariableDeclaration",
-                  "scope": 34,
-                  "src": "1538:22:0",
+                  "scope": 2124,
+                  "src": "1272:25:11",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -364,10 +416,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 22,
+                    "id": 2116,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1538:6:0",
+                    "src": "1272:6:11",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -377,13 +429,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 25,
+                  "id": 2119,
                   "mutability": "mutable",
-                  "name": "gameId",
-                  "nameLocation": "1578:6:0",
+                  "name": "_userId",
+                  "nameLocation": "1315:7:11",
                   "nodeType": "VariableDeclaration",
-                  "scope": 34,
-                  "src": "1562:22:0",
+                  "scope": 2124,
+                  "src": "1299:23:11",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -391,10 +443,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 24,
+                    "id": 2118,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1562:6:0",
+                    "src": "1299:6:11",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -404,13 +456,69 @@
                 },
                 {
                   "constant": false,
-                  "id": 27,
+                  "id": 2121,
                   "mutability": "mutable",
-                  "name": "levelId",
-                  "nameLocation": "1602:7:0",
+                  "name": "_addr",
+                  "nameLocation": "1332:5:11",
                   "nodeType": "VariableDeclaration",
-                  "scope": 34,
-                  "src": "1586:23:0",
+                  "scope": 2124,
+                  "src": "1324:13:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2120,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1324:7:11",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1271:67:11"
+            },
+            "returnParameters": {
+              "id": 2123,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1347:0:11"
+            },
+            "scope": 2150,
+            "src": "1252:96:11",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "10d49604",
+            "id": 2135,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "add_run",
+            "nameLocation": "1371:7:11",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2133,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2126,
+                  "mutability": "mutable",
+                  "name": "_userId",
+                  "nameLocation": "1395:7:11",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2135,
+                  "src": "1379:23:11",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -418,10 +526,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 26,
+                    "id": 2125,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1586:6:0",
+                    "src": "1379:6:11",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -431,13 +539,67 @@
                 },
                 {
                   "constant": false,
-                  "id": 29,
+                  "id": 2128,
+                  "mutability": "mutable",
+                  "name": "_gameId",
+                  "nameLocation": "1420:7:11",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2135,
+                  "src": "1404:23:11",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 2127,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1404:6:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2130,
+                  "mutability": "mutable",
+                  "name": "_levelId",
+                  "nameLocation": "1445:8:11",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2135,
+                  "src": "1429:24:11",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 2129,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1429:6:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2132,
                   "mutability": "mutable",
                   "name": "mark",
-                  "nameLocation": "1616:4:0",
+                  "nameLocation": "1460:4:11",
                   "nodeType": "VariableDeclaration",
-                  "scope": 34,
-                  "src": "1611:9:0",
+                  "scope": 2135,
+                  "src": "1455:9:11",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -445,10 +607,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 28,
+                    "id": 2131,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1611:4:0",
+                    "src": "1455:4:11",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -457,21 +619,163 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1537:84:0"
+              "src": "1378:87:11"
             },
             "returnParameters": {
-              "id": 33,
+              "id": 2134,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1474:0:11"
+            },
+            "scope": 2150,
+            "src": "1362:113:11",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 2136,
+              "nodeType": "StructuredDocumentation",
+              "src": "1481:430:11",
+              "text": "@param userId The SppedRum.com `userId` being queried.\n @param gameId The id of the game.\n @param levelId The id of the level of the game.\n @param mark The time ckeched. \n @return `true` if there is verified evidence in the repo that the user has a mark equal or better than `mark`.\n @notice It returns `false` if no evidence found (but it might be that such evidence is yet at SpeedRun.com)"
+            },
+            "functionSelector": "a89f90cf",
+            "id": 2149,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "passed_mark",
+            "nameLocation": "1926:11:11",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2145,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 32,
+                  "id": 2138,
+                  "mutability": "mutable",
+                  "name": "userId",
+                  "nameLocation": "1954:6:11",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2149,
+                  "src": "1938:22:11",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 2137,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1938:6:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2140,
+                  "mutability": "mutable",
+                  "name": "gameId",
+                  "nameLocation": "1978:6:11",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2149,
+                  "src": "1962:22:11",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 2139,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1962:6:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2142,
+                  "mutability": "mutable",
+                  "name": "levelId",
+                  "nameLocation": "2002:7:11",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2149,
+                  "src": "1986:23:11",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 2141,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1986:6:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2144,
+                  "mutability": "mutable",
+                  "name": "mark",
+                  "nameLocation": "2016:4:11",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2149,
+                  "src": "2011:9:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2143,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2011:4:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1937:84:11"
+            },
+            "returnParameters": {
+              "id": 2148,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2147,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 34,
-                  "src": "1645:4:0",
+                  "scope": 2149,
+                  "src": "2045:4:11",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -479,10 +783,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 31,
+                    "id": 2146,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1645:4:0",
+                    "src": "2045:4:11",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -491,77 +795,78 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1644:6:0"
+              "src": "2044:6:11"
             },
-            "scope": 35,
-            "src": "1516:135:0",
+            "scope": 2150,
+            "src": "1916:135:11",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 36,
-        "src": "240:1413:0",
+        "scope": 2151,
+        "src": "241:1812:11",
         "usedErrors": []
       }
     ],
-    "src": "36:1617:0"
+    "src": "36:2017:11"
   },
   "legacyAST": {
-    "absolutePath": "/Users/msicilia/Desktop/dev/lrn/consensys/blockchain-developer-bootcamp-final-project/contracts/ISpeedRunRepo.sol",
+    "absolutePath": "project:/contracts/ISpeedRunRepo.sol",
     "exportedSymbols": {
       "ISpeedRunRepo": [
-        35
+        2150
       ]
     },
-    "id": 36,
+    "id": 2151,
     "license": "GPL-3.0",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1,
+        "id": 2095,
         "literals": [
           "solidity",
           "^",
           "0.8",
-          ".7"
+          ".10"
         ],
         "nodeType": "PragmaDirective",
-        "src": "36:23:0"
+        "src": "36:24:11"
       },
       {
         "abstract": false,
         "baseContracts": [],
+        "canonicalName": "ISpeedRunRepo",
         "contractDependencies": [],
         "contractKind": "interface",
         "documentation": {
-          "id": 2,
+          "id": 2096,
           "nodeType": "StructuredDocumentation",
-          "src": "60:180:0",
+          "src": "61:180:11",
           "text": "@title A repository of data from Speedrun.com\n @author msicilia.eth\n @notice This interface defines the data structures and the interface of data repos for SpeedRun.com."
         },
         "fullyImplemented": false,
-        "id": 35,
+        "id": 2150,
         "linearizedBaseContracts": [
-          35
+          2150
         ],
         "name": "ISpeedRunRepo",
-        "nameLocation": "250:13:0",
+        "nameLocation": "251:13:11",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "ISpeedRunRepo.SpeedRunner",
-            "id": 9,
+            "id": 2103,
             "members": [
               {
                 "constant": false,
-                "id": 4,
+                "id": 2098,
                 "mutability": "mutable",
                 "name": "userName",
-                "nameLocation": "577:8:0",
+                "nameLocation": "578:8:11",
                 "nodeType": "VariableDeclaration",
-                "scope": 9,
-                "src": "570:15:0",
+                "scope": 2103,
+                "src": "571:15:11",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -569,10 +874,10 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 3,
+                  "id": 2097,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
-                  "src": "570:6:0",
+                  "src": "571:6:11",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_storage_ptr",
                     "typeString": "string"
@@ -582,13 +887,13 @@
               },
               {
                 "constant": false,
-                "id": 6,
+                "id": 2100,
                 "mutability": "mutable",
                 "name": "userId",
-                "nameLocation": "603:6:0",
+                "nameLocation": "604:6:11",
                 "nodeType": "VariableDeclaration",
-                "scope": 9,
-                "src": "596:13:0",
+                "scope": 2103,
+                "src": "597:13:11",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -596,10 +901,10 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 5,
+                  "id": 2099,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
-                  "src": "596:6:0",
+                  "src": "597:6:11",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_storage_ptr",
                     "typeString": "string"
@@ -609,13 +914,13 @@
               },
               {
                 "constant": false,
-                "id": 8,
+                "id": 2102,
                 "mutability": "mutable",
                 "name": "addr",
-                "nameLocation": "627:4:0",
+                "nameLocation": "628:4:11",
                 "nodeType": "VariableDeclaration",
-                "scope": 9,
-                "src": "619:12:0",
+                "scope": 2103,
+                "src": "620:12:11",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -623,10 +928,10 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 7,
+                  "id": 2101,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
-                  "src": "619:7:0",
+                  "src": "620:7:11",
                   "stateMutability": "nonpayable",
                   "typeDescriptions": {
                     "typeIdentifier": "t_address",
@@ -637,25 +942,25 @@
               }
             ],
             "name": "SpeedRunner",
-            "nameLocation": "549:11:0",
+            "nameLocation": "550:11:11",
             "nodeType": "StructDefinition",
-            "scope": 35,
-            "src": "542:96:0",
+            "scope": 2150,
+            "src": "543:96:11",
             "visibility": "public"
           },
           {
             "canonicalName": "ISpeedRunRepo.Run",
-            "id": 20,
+            "id": 2114,
             "members": [
               {
                 "constant": false,
-                "id": 11,
+                "id": 2105,
                 "mutability": "mutable",
                 "name": "gameId",
-                "nameLocation": "968:6:0",
+                "nameLocation": "969:6:11",
                 "nodeType": "VariableDeclaration",
-                "scope": 20,
-                "src": "961:13:0",
+                "scope": 2114,
+                "src": "962:13:11",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -663,10 +968,10 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 10,
+                  "id": 2104,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
-                  "src": "961:6:0",
+                  "src": "962:6:11",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_storage_ptr",
                     "typeString": "string"
@@ -676,13 +981,13 @@
               },
               {
                 "constant": false,
-                "id": 13,
+                "id": 2107,
                 "mutability": "mutable",
                 "name": "levelId",
-                "nameLocation": "991:7:0",
+                "nameLocation": "992:7:11",
                 "nodeType": "VariableDeclaration",
-                "scope": 20,
-                "src": "984:14:0",
+                "scope": 2114,
+                "src": "985:14:11",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -690,10 +995,10 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 12,
+                  "id": 2106,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
-                  "src": "984:6:0",
+                  "src": "985:6:11",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_storage_ptr",
                     "typeString": "string"
@@ -703,13 +1008,13 @@
               },
               {
                 "constant": false,
-                "id": 15,
+                "id": 2109,
                 "mutability": "mutable",
                 "name": "runId",
-                "nameLocation": "1015:5:0",
+                "nameLocation": "1016:5:11",
                 "nodeType": "VariableDeclaration",
-                "scope": 20,
-                "src": "1008:12:0",
+                "scope": 2114,
+                "src": "1009:12:11",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -717,10 +1022,10 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 14,
+                  "id": 2108,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
-                  "src": "1008:6:0",
+                  "src": "1009:6:11",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_storage_ptr",
                     "typeString": "string"
@@ -730,13 +1035,13 @@
               },
               {
                 "constant": false,
-                "id": 17,
+                "id": 2111,
                 "mutability": "mutable",
                 "name": "primaryTime",
-                "nameLocation": "1035:11:0",
+                "nameLocation": "1036:11:11",
                 "nodeType": "VariableDeclaration",
-                "scope": 20,
-                "src": "1030:16:0",
+                "scope": 2114,
+                "src": "1031:16:11",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -744,10 +1049,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 16,
+                  "id": 2110,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
-                  "src": "1030:4:0",
+                  "src": "1031:4:11",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -757,13 +1062,13 @@
               },
               {
                 "constant": false,
-                "id": 19,
+                "id": 2113,
                 "mutability": "mutable",
                 "name": "userId",
-                "nameLocation": "1063:6:0",
+                "nameLocation": "1064:6:11",
                 "nodeType": "VariableDeclaration",
-                "scope": 20,
-                "src": "1056:13:0",
+                "scope": 2114,
+                "src": "1057:13:11",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -771,10 +1076,10 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 18,
+                  "id": 2112,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
-                  "src": "1056:6:0",
+                  "src": "1057:6:11",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_storage_ptr",
                     "typeString": "string"
@@ -784,40 +1089,40 @@
               }
             ],
             "name": "Run",
-            "nameLocation": "948:3:0",
+            "nameLocation": "949:3:11",
             "nodeType": "StructDefinition",
-            "scope": 35,
-            "src": "941:135:0",
+            "scope": 2150,
+            "src": "942:135:11",
             "visibility": "public"
           },
           {
             "documentation": {
-              "id": 21,
+              "id": 2115,
               "nodeType": "StructuredDocumentation",
-              "src": "1081:430:0",
-              "text": "@param userId The SppedRum.com `userId` being queried.\n @param gameId The id of the game.\n @param levelId The id of the level of the game.\n @param mark The time ckeched. \n @return `true` if there is verified evidence in the repo that the user has a mark equal or better than `mark`.\n @notice It returns `false` if no evidence found (but it might be that such evidence is yet at SpeedRun.com)"
+              "src": "1082:165:11",
+              "text": "@param _userName The name of the SpeedRun.com user\n @param _userId The SpeedRunner id of the user.\n @param _addr An address associated to the user."
             },
-            "functionSelector": "a89f90cf",
-            "id": 34,
+            "functionSelector": "42e315ee",
+            "id": 2124,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
-            "name": "passed_mark",
-            "nameLocation": "1526:11:0",
+            "name": "add_runner",
+            "nameLocation": "1261:10:11",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 30,
+              "id": 2122,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23,
+                  "id": 2117,
                   "mutability": "mutable",
-                  "name": "userId",
-                  "nameLocation": "1554:6:0",
+                  "name": "_userName",
+                  "nameLocation": "1288:9:11",
                   "nodeType": "VariableDeclaration",
-                  "scope": 34,
-                  "src": "1538:22:0",
+                  "scope": 2124,
+                  "src": "1272:25:11",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -825,10 +1130,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 22,
+                    "id": 2116,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1538:6:0",
+                    "src": "1272:6:11",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -838,13 +1143,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 25,
+                  "id": 2119,
                   "mutability": "mutable",
-                  "name": "gameId",
-                  "nameLocation": "1578:6:0",
+                  "name": "_userId",
+                  "nameLocation": "1315:7:11",
                   "nodeType": "VariableDeclaration",
-                  "scope": 34,
-                  "src": "1562:22:0",
+                  "scope": 2124,
+                  "src": "1299:23:11",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -852,10 +1157,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 24,
+                    "id": 2118,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1562:6:0",
+                    "src": "1299:6:11",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -865,13 +1170,69 @@
                 },
                 {
                   "constant": false,
-                  "id": 27,
+                  "id": 2121,
                   "mutability": "mutable",
-                  "name": "levelId",
-                  "nameLocation": "1602:7:0",
+                  "name": "_addr",
+                  "nameLocation": "1332:5:11",
                   "nodeType": "VariableDeclaration",
-                  "scope": 34,
-                  "src": "1586:23:0",
+                  "scope": 2124,
+                  "src": "1324:13:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2120,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1324:7:11",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1271:67:11"
+            },
+            "returnParameters": {
+              "id": 2123,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1347:0:11"
+            },
+            "scope": 2150,
+            "src": "1252:96:11",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "10d49604",
+            "id": 2135,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "add_run",
+            "nameLocation": "1371:7:11",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2133,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2126,
+                  "mutability": "mutable",
+                  "name": "_userId",
+                  "nameLocation": "1395:7:11",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2135,
+                  "src": "1379:23:11",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -879,10 +1240,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 26,
+                    "id": 2125,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1586:6:0",
+                    "src": "1379:6:11",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -892,13 +1253,67 @@
                 },
                 {
                   "constant": false,
-                  "id": 29,
+                  "id": 2128,
+                  "mutability": "mutable",
+                  "name": "_gameId",
+                  "nameLocation": "1420:7:11",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2135,
+                  "src": "1404:23:11",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 2127,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1404:6:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2130,
+                  "mutability": "mutable",
+                  "name": "_levelId",
+                  "nameLocation": "1445:8:11",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2135,
+                  "src": "1429:24:11",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 2129,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1429:6:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2132,
                   "mutability": "mutable",
                   "name": "mark",
-                  "nameLocation": "1616:4:0",
+                  "nameLocation": "1460:4:11",
                   "nodeType": "VariableDeclaration",
-                  "scope": 34,
-                  "src": "1611:9:0",
+                  "scope": 2135,
+                  "src": "1455:9:11",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -906,10 +1321,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 28,
+                    "id": 2131,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1611:4:0",
+                    "src": "1455:4:11",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -918,21 +1333,163 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1537:84:0"
+              "src": "1378:87:11"
             },
             "returnParameters": {
-              "id": 33,
+              "id": 2134,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1474:0:11"
+            },
+            "scope": 2150,
+            "src": "1362:113:11",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 2136,
+              "nodeType": "StructuredDocumentation",
+              "src": "1481:430:11",
+              "text": "@param userId The SppedRum.com `userId` being queried.\n @param gameId The id of the game.\n @param levelId The id of the level of the game.\n @param mark The time ckeched. \n @return `true` if there is verified evidence in the repo that the user has a mark equal or better than `mark`.\n @notice It returns `false` if no evidence found (but it might be that such evidence is yet at SpeedRun.com)"
+            },
+            "functionSelector": "a89f90cf",
+            "id": 2149,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "passed_mark",
+            "nameLocation": "1926:11:11",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2145,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 32,
+                  "id": 2138,
+                  "mutability": "mutable",
+                  "name": "userId",
+                  "nameLocation": "1954:6:11",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2149,
+                  "src": "1938:22:11",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 2137,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1938:6:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2140,
+                  "mutability": "mutable",
+                  "name": "gameId",
+                  "nameLocation": "1978:6:11",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2149,
+                  "src": "1962:22:11",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 2139,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1962:6:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2142,
+                  "mutability": "mutable",
+                  "name": "levelId",
+                  "nameLocation": "2002:7:11",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2149,
+                  "src": "1986:23:11",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 2141,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1986:6:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2144,
+                  "mutability": "mutable",
+                  "name": "mark",
+                  "nameLocation": "2016:4:11",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2149,
+                  "src": "2011:9:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2143,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2011:4:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1937:84:11"
+            },
+            "returnParameters": {
+              "id": 2148,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2147,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 34,
-                  "src": "1645:4:0",
+                  "scope": 2149,
+                  "src": "2045:4:11",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -940,10 +1497,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 31,
+                    "id": 2146,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1645:4:0",
+                    "src": "2045:4:11",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -952,33 +1509,40 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1644:6:0"
+              "src": "2044:6:11"
             },
-            "scope": 35,
-            "src": "1516:135:0",
+            "scope": 2150,
+            "src": "1916:135:11",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 36,
-        "src": "240:1413:0",
+        "scope": 2151,
+        "src": "241:1812:11",
         "usedErrors": []
       }
     ],
-    "src": "36:1617:0"
+    "src": "36:2017:11"
   },
   "compiler": {
     "name": "solc",
-    "version": "0.8.7+commit.e28d00a7.Emscripten.clang"
+    "version": "0.8.10+commit.fc410830.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.3.3",
-  "updatedAt": "2021-11-16T17:14:17.871Z",
+  "schemaVersion": "3.4.3",
+  "updatedAt": "2021-11-25T10:00:57.016Z",
   "devdoc": {
     "author": "msicilia.eth",
     "kind": "dev",
     "methods": {
+      "add_runner(string,string,address)": {
+        "params": {
+          "_addr": "An address associated to the user.",
+          "_userId": "The SpeedRunner id of the user.",
+          "_userName": "The name of the SpeedRun.com user"
+        }
+      },
       "passed_mark(string,string,string,uint256)": {
         "params": {
           "gameId": "The id of the game.",

@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-3.0
-pragma solidity ^0.8.7;
+pragma solidity ^0.8.10;
 
 import "./ISpeedRunRepo.sol";
 
@@ -12,7 +12,7 @@ contract SpeedRunRepo_Stub is ISpeedRunRepo {
     mapping (string => mapping (string => mapping (string => Run))) runs; 
 
     /// @dev Note this naive implementation allows anybody to steal the prizes of others by simply 
-    ///      registering again to other address.
+    ///      registering again to other address. See the oraclized version for a more realistic use case.
      function add_runner(string calldata _userName, string calldata _userId, address _addr) external{
         runners[_userId] = SpeedRunner(_userName, _userId, _addr);
     }

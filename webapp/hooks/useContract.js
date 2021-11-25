@@ -12,7 +12,6 @@ export function useContract(contractAddress, ABI) {
   }
  
   const { library, account } = useWeb3React();
-  console.log(account);
   const signerOrProvider = account ? library.getSigner(account).connectUnchecked() : library;
 
   return useMemo(() => {

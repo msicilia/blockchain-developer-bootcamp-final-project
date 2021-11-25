@@ -45,6 +45,51 @@
       "type": "event"
     },
     {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
       "inputs": [
         {
           "internalType": "string",
@@ -52,7 +97,7 @@
           "type": "string"
         }
       ],
-      "name": "reclaim",
+      "name": "reclaim_prize",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
@@ -89,9 +134,16 @@
       "outputs": [],
       "stateMutability": "payable",
       "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "return_funds_and_destroy",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.8.7+commit.e28d00a7\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"challengeId\",\"type\":\"string\"},{\"indexed\":true,\"internalType\":\"string\",\"name\":\"userId\",\"type\":\"string\"},{\"indexed\":true,\"internalType\":\"string\",\"name\":\"gameId\",\"type\":\"string\"},{\"indexed\":true,\"internalType\":\"string\",\"name\":\"levelId\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"time\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"prize\",\"type\":\"uint256\"}],\"name\":\"ChallengePlaced\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_userId\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_gameId\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_levelId\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"_time\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"_challengeId\",\"type\":\"string\"}],\"name\":\"place_challenge\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"challengeId\",\"type\":\"string\"}],\"name\":\"reclaim\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/Users/msicilia/Desktop/dev/lrn/consensys/blockchain-developer-bootcamp-final-project/contracts/MotivatorBase.sol\":\"MotivatorBase\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/msicilia/Desktop/dev/lrn/consensys/blockchain-developer-bootcamp-final-project/contracts/ISpeedRunRepo.sol\":{\"keccak256\":\"0x0abe1a6728d42191421e4d4999f1982ad3a7379a7cd09d420988962947f59078\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://5afc8fae31d60538921ac2b73bf430224c52745a0c09356b114326d3c04e0d00\",\"dweb:/ipfs/QmaKYNnvDnucd44AxHcesPQSecoNYcfUdBhsZEbF7x6vaw\"]},\"/Users/msicilia/Desktop/dev/lrn/consensys/blockchain-developer-bootcamp-final-project/contracts/MotivatorBase.sol\":{\"keccak256\":\"0x86c51023ed526bc54a788e54826edb5a82735e0bb0211e1afd507ea38bdf306a\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://6fe7872620e6848e6504a21469e4911084d521e07be361f80e48e2bfc27426a0\",\"dweb:/ipfs/QmQduvtTzX5dxWBjGqSQxAh4CpuVzAiLMRkgo6UgikmWq3\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.10+commit.fc410830\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"challengeId\",\"type\":\"string\"},{\"indexed\":true,\"internalType\":\"string\",\"name\":\"userId\",\"type\":\"string\"},{\"indexed\":true,\"internalType\":\"string\",\"name\":\"gameId\",\"type\":\"string\"},{\"indexed\":true,\"internalType\":\"string\",\"name\":\"levelId\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"time\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"prize\",\"type\":\"uint256\"}],\"name\":\"ChallengePlaced\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_userId\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_gameId\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_levelId\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"_time\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"_challengeId\",\"type\":\"string\"}],\"name\":\"place_challenge\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"challengeId\",\"type\":\"string\"}],\"name\":\"reclaim_prize\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"return_funds_and_destroy\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"transferOwnership(address)\":{\"details\":\"Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/MotivatorBase.sol\":\"MotivatorBase\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/ISpeedRunRepo.sol\":{\"keccak256\":\"0x5fc662adbcdbd9c48b4a92dfa3d03625919c02ee4f868ae4b02e2d2c24c0fb51\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://52d7be6eced0fa2b2ef6968e4250edb107d38811700bd328c022733f3c53a395\",\"dweb:/ipfs/QmYdSdpEXTfgSf21NSuBKeyUwi1aYiuTtb28roPt5pNJxh\"]},\"project:/contracts/MotivatorBase.sol\":{\"keccak256\":\"0x3038c1fa74a6c6bf93bf86fa5ac6ae9d3b39b9f47c50b88d543f50540e217f96\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://e44f344b75ecfe13288aac77fcbfc1906332ba3b90e1fb53f6c9c5244b52fe9c\",\"dweb:/ipfs/QmS9CyzGb3sF5RRNjkNzs84EP5TSAYZfsgWra98BaqH6L4\"]},\"project:/contracts/Ownable.sol\":{\"keccak256\":\"0x40373e041d9b2db92c7842db75f3cfe693b496fda0a72b9841fde29866b93746\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://40a4852e9398fbfed896c7b8caee981506c722e87ab9b91bc0a93597bc206b6e\",\"dweb:/ipfs/QmZ5XRNXBDwZYpsWWoGKayroaVbtxFs4TUc5W4thvhGty5\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "immutableReferences": {},
@@ -99,72 +151,102 @@
   "deployedGeneratedSources": [],
   "sourceMap": "",
   "deployedSourceMap": "",
-  "source": "// SPDX-License-Identifier: GPL-3.0\npragma solidity ^0.8.7;\n/// @title A motivating mechanism for speedrunners.\n/// @author msicilia.eth\n/// @notice This interface defines the basic interface for a variety of possible mechanisms.\n\nimport \"./ISpeedRunRepo.sol\";\n\n\nabstract contract MotivatorBase{\n    struct Challenge {\n        string userId;\n        string gameId;\n        string levelId;\n        uint time;\n        uint prize; \n        bool reclaimed;\n    }\n    event ChallengePlaced(\n        string challengeId,\n        string indexed userId, \n        string indexed gameId,\n        string indexed levelId,\n        uint time,\n        uint prize      \n    ); \n    \n    mapping (string => Challenge) challenges;\n\n    address speedrunRepo;\n    ISpeedRunRepo repo;\n\n    constructor(address _spreedrunRepo){\n        speedrunRepo = _spreedrunRepo;\n        repo = ISpeedRunRepo(_spreedrunRepo);\n    }\n    function reclaim(string calldata challengeId) external virtual;\n    function place_challenge(string calldata _userId, string calldata _gameId, string calldata _levelId,\n                             uint _time, string calldata _challengeId) external virtual payable{\n        require(msg.value > 0, \"Challenges need to provide funds for rewarding speedrunners\");\n        require(_time > 0, \"The time of the challenge needs to be greater than zero.\");\n        require(challenges[_challengeId].time != 0, \"ChallengeId already used.\");\n        Challenge memory c = Challenge(_userId, _gameId, _levelId, _time, msg.value, false);\n        challenges[_challengeId] = c;\n        emit ChallengePlaced(_challengeId, _userId, _gameId, _levelId, _time, msg.value);\n    }\n\n}",
+  "source": "// SPDX-License-Identifier: GPL-3.0\npragma solidity ^0.8.10;\n/// @title A motivating mechanism for speedrunners.\n/// @author msicilia.eth\n/// @notice This interface defines the basic interface for a variety of possible mechanisms.\n\nimport \"./ISpeedRunRepo.sol\";\nimport \"./Ownable.sol\";\n\nabstract contract MotivatorBase is Ownable{\n    struct Challenge {\n        string userId;\n        string gameId;\n        string levelId;\n        uint time;\n        uint prize; \n        bool reclaimed;\n    }\n    event ChallengePlaced(\n        string challengeId,\n        string indexed userId, \n        string indexed gameId,\n        string indexed levelId,\n        uint time,\n        uint prize      \n    ); \n    \n    mapping (string => Challenge) challenges;\n\n    address speedrunRepo;\n    ISpeedRunRepo repo;\n\n    constructor(address _spreedrunRepo){\n        speedrunRepo = _spreedrunRepo;\n        repo = ISpeedRunRepo(_spreedrunRepo);\n    }\n    function reclaim_prize(string calldata challengeId) external virtual;\n    function place_challenge(string calldata _userId, string calldata _gameId, string calldata _levelId,\n                             uint _time, string calldata _challengeId) external virtual payable{\n        require(msg.value > 0, \"Challenges need to provide funds for rewarding speedrunners\");\n        require(_time > 0, \"The time of the challenge needs to be greater than zero.\");\n        require(challenges[_challengeId].time != 0, \"ChallengeId already used.\");\n        Challenge memory c = Challenge(_userId, _gameId, _levelId, _time, msg.value, false);\n        challenges[_challengeId] = c;\n        emit ChallengePlaced(_challengeId, _userId, _gameId, _levelId, _time, msg.value);\n    }\n    \n    function return_funds_and_destroy() external onlyOwner {\n\n    }\n}",
   "sourcePath": "/Users/msicilia/Desktop/dev/lrn/consensys/blockchain-developer-bootcamp-final-project/contracts/MotivatorBase.sol",
   "ast": {
-    "absolutePath": "/Users/msicilia/Desktop/dev/lrn/consensys/blockchain-developer-bootcamp-final-project/contracts/MotivatorBase.sol",
+    "absolutePath": "project:/contracts/MotivatorBase.sol",
     "exportedSymbols": {
       "ISpeedRunRepo": [
-        35
+        2150
       ],
       "MotivatorBase": [
-        198
+        2289
+      ],
+      "Ownable": [
+        2377
       ]
     },
-    "id": 199,
+    "id": 2290,
     "license": "GPL-3.0",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 70,
+        "id": 2152,
         "literals": [
           "solidity",
           "^",
           "0.8",
-          ".7"
+          ".10"
         ],
         "nodeType": "PragmaDirective",
-        "src": "36:23:2"
+        "src": "36:24:12"
       },
       {
-        "absolutePath": "/Users/msicilia/Desktop/dev/lrn/consensys/blockchain-developer-bootcamp-final-project/contracts/ISpeedRunRepo.sol",
+        "absolutePath": "project:/contracts/ISpeedRunRepo.sol",
         "file": "./ISpeedRunRepo.sol",
-        "id": 71,
+        "id": 2153,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 199,
-        "sourceUnit": 36,
-        "src": "231:29:2",
+        "scope": 2290,
+        "sourceUnit": 2151,
+        "src": "232:29:12",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/contracts/Ownable.sol",
+        "file": "./Ownable.sol",
+        "id": 2154,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 2290,
+        "sourceUnit": 2378,
+        "src": "262:23:12",
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
         "abstract": true,
-        "baseContracts": [],
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 2155,
+              "name": "Ownable",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 2377,
+              "src": "322:7:12"
+            },
+            "id": 2156,
+            "nodeType": "InheritanceSpecifier",
+            "src": "322:7:12"
+          }
+        ],
+        "canonicalName": "MotivatorBase",
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": false,
-        "id": 198,
+        "id": 2289,
         "linearizedBaseContracts": [
-          198
+          2289,
+          2377
         ],
         "name": "MotivatorBase",
-        "nameLocation": "281:13:2",
+        "nameLocation": "305:13:12",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "MotivatorBase.Challenge",
-            "id": 84,
+            "id": 2169,
             "members": [
               {
                 "constant": false,
-                "id": 73,
+                "id": 2158,
                 "mutability": "mutable",
                 "name": "userId",
-                "nameLocation": "334:6:2",
+                "nameLocation": "369:6:12",
                 "nodeType": "VariableDeclaration",
-                "scope": 84,
-                "src": "327:13:2",
+                "scope": 2169,
+                "src": "362:13:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -172,10 +254,10 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 72,
+                  "id": 2157,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
-                  "src": "327:6:2",
+                  "src": "362:6:12",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_storage_ptr",
                     "typeString": "string"
@@ -185,13 +267,13 @@
               },
               {
                 "constant": false,
-                "id": 75,
+                "id": 2160,
                 "mutability": "mutable",
                 "name": "gameId",
-                "nameLocation": "357:6:2",
+                "nameLocation": "392:6:12",
                 "nodeType": "VariableDeclaration",
-                "scope": 84,
-                "src": "350:13:2",
+                "scope": 2169,
+                "src": "385:13:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -199,10 +281,10 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 74,
+                  "id": 2159,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
-                  "src": "350:6:2",
+                  "src": "385:6:12",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_storage_ptr",
                     "typeString": "string"
@@ -212,13 +294,13 @@
               },
               {
                 "constant": false,
-                "id": 77,
+                "id": 2162,
                 "mutability": "mutable",
                 "name": "levelId",
-                "nameLocation": "380:7:2",
+                "nameLocation": "415:7:12",
                 "nodeType": "VariableDeclaration",
-                "scope": 84,
-                "src": "373:14:2",
+                "scope": 2169,
+                "src": "408:14:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -226,10 +308,10 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 76,
+                  "id": 2161,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
-                  "src": "373:6:2",
+                  "src": "408:6:12",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_storage_ptr",
                     "typeString": "string"
@@ -239,13 +321,13 @@
               },
               {
                 "constant": false,
-                "id": 79,
+                "id": 2164,
                 "mutability": "mutable",
                 "name": "time",
-                "nameLocation": "402:4:2",
+                "nameLocation": "437:4:12",
                 "nodeType": "VariableDeclaration",
-                "scope": 84,
-                "src": "397:9:2",
+                "scope": 2169,
+                "src": "432:9:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -253,10 +335,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 78,
+                  "id": 2163,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
-                  "src": "397:4:2",
+                  "src": "432:4:12",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -266,13 +348,13 @@
               },
               {
                 "constant": false,
-                "id": 81,
+                "id": 2166,
                 "mutability": "mutable",
                 "name": "prize",
-                "nameLocation": "421:5:2",
+                "nameLocation": "456:5:12",
                 "nodeType": "VariableDeclaration",
-                "scope": 84,
-                "src": "416:10:2",
+                "scope": 2169,
+                "src": "451:10:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -280,10 +362,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 80,
+                  "id": 2165,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
-                  "src": "416:4:2",
+                  "src": "451:4:12",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -293,13 +375,13 @@
               },
               {
                 "constant": false,
-                "id": 83,
+                "id": 2168,
                 "mutability": "mutable",
                 "name": "reclaimed",
-                "nameLocation": "442:9:2",
+                "nameLocation": "477:9:12",
                 "nodeType": "VariableDeclaration",
-                "scope": 84,
-                "src": "437:14:2",
+                "scope": 2169,
+                "src": "472:14:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -307,10 +389,10 @@
                   "typeString": "bool"
                 },
                 "typeName": {
-                  "id": 82,
+                  "id": 2167,
                   "name": "bool",
                   "nodeType": "ElementaryTypeName",
-                  "src": "437:4:2",
+                  "src": "472:4:12",
                   "typeDescriptions": {
                     "typeIdentifier": "t_bool",
                     "typeString": "bool"
@@ -320,32 +402,32 @@
               }
             ],
             "name": "Challenge",
-            "nameLocation": "307:9:2",
+            "nameLocation": "342:9:12",
             "nodeType": "StructDefinition",
-            "scope": 198,
-            "src": "300:158:2",
+            "scope": 2289,
+            "src": "335:158:12",
             "visibility": "public"
           },
           {
             "anonymous": false,
-            "id": 98,
+            "id": 2183,
             "name": "ChallengePlaced",
-            "nameLocation": "469:15:2",
+            "nameLocation": "504:15:12",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 97,
+              "id": 2182,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 86,
+                  "id": 2171,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "challengeId",
-                  "nameLocation": "501:11:2",
+                  "nameLocation": "536:11:12",
                   "nodeType": "VariableDeclaration",
-                  "scope": 98,
-                  "src": "494:18:2",
+                  "scope": 2183,
+                  "src": "529:18:12",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -353,10 +435,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 85,
+                    "id": 2170,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "494:6:2",
+                    "src": "529:6:12",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -366,14 +448,14 @@
                 },
                 {
                   "constant": false,
-                  "id": 88,
+                  "id": 2173,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "userId",
-                  "nameLocation": "537:6:2",
+                  "nameLocation": "572:6:12",
                   "nodeType": "VariableDeclaration",
-                  "scope": 98,
-                  "src": "522:21:2",
+                  "scope": 2183,
+                  "src": "557:21:12",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -381,10 +463,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 87,
+                    "id": 2172,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "522:6:2",
+                    "src": "557:6:12",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -394,14 +476,14 @@
                 },
                 {
                   "constant": false,
-                  "id": 90,
+                  "id": 2175,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "gameId",
-                  "nameLocation": "569:6:2",
+                  "nameLocation": "604:6:12",
                   "nodeType": "VariableDeclaration",
-                  "scope": 98,
-                  "src": "554:21:2",
+                  "scope": 2183,
+                  "src": "589:21:12",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -409,10 +491,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 89,
+                    "id": 2174,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "554:6:2",
+                    "src": "589:6:12",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -422,14 +504,14 @@
                 },
                 {
                   "constant": false,
-                  "id": 92,
+                  "id": 2177,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "levelId",
-                  "nameLocation": "600:7:2",
+                  "nameLocation": "635:7:12",
                   "nodeType": "VariableDeclaration",
-                  "scope": 98,
-                  "src": "585:22:2",
+                  "scope": 2183,
+                  "src": "620:22:12",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -437,10 +519,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 91,
+                    "id": 2176,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "585:6:2",
+                    "src": "620:6:12",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -450,14 +532,14 @@
                 },
                 {
                   "constant": false,
-                  "id": 94,
+                  "id": 2179,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "time",
-                  "nameLocation": "622:4:2",
+                  "nameLocation": "657:4:12",
                   "nodeType": "VariableDeclaration",
-                  "scope": 98,
-                  "src": "617:9:2",
+                  "scope": 2183,
+                  "src": "652:9:12",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -465,10 +547,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 93,
+                    "id": 2178,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "617:4:2",
+                    "src": "652:4:12",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -478,14 +560,14 @@
                 },
                 {
                   "constant": false,
-                  "id": 96,
+                  "id": 2181,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "prize",
-                  "nameLocation": "641:5:2",
+                  "nameLocation": "676:5:12",
                   "nodeType": "VariableDeclaration",
-                  "scope": 98,
-                  "src": "636:10:2",
+                  "scope": 2183,
+                  "src": "671:10:12",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -493,10 +575,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 95,
+                    "id": 2180,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "636:4:2",
+                    "src": "671:4:12",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -505,57 +587,57 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "484:174:2"
+              "src": "519:174:12"
             },
-            "src": "463:196:2"
+            "src": "498:196:12"
           },
           {
             "constant": false,
-            "id": 103,
+            "id": 2188,
             "mutability": "mutable",
             "name": "challenges",
-            "nameLocation": "700:10:2",
+            "nameLocation": "735:10:12",
             "nodeType": "VariableDeclaration",
-            "scope": 198,
-            "src": "670:40:2",
+            "scope": 2289,
+            "src": "705:40:12",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Challenge_$84_storage_$",
+              "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Challenge_$2169_storage_$",
               "typeString": "mapping(string => struct MotivatorBase.Challenge)"
             },
             "typeName": {
-              "id": 102,
+              "id": 2187,
               "keyType": {
-                "id": 99,
+                "id": 2184,
                 "name": "string",
                 "nodeType": "ElementaryTypeName",
-                "src": "679:6:2",
+                "src": "714:6:12",
                 "typeDescriptions": {
                   "typeIdentifier": "t_string_storage_ptr",
                   "typeString": "string"
                 }
               },
               "nodeType": "Mapping",
-              "src": "670:29:2",
+              "src": "705:29:12",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Challenge_$84_storage_$",
+                "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Challenge_$2169_storage_$",
                 "typeString": "mapping(string => struct MotivatorBase.Challenge)"
               },
               "valueType": {
-                "id": 101,
+                "id": 2186,
                 "nodeType": "UserDefinedTypeName",
                 "pathNode": {
-                  "id": 100,
+                  "id": 2185,
                   "name": "Challenge",
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 84,
-                  "src": "689:9:2"
+                  "referencedDeclaration": 2169,
+                  "src": "724:9:12"
                 },
-                "referencedDeclaration": 84,
-                "src": "689:9:2",
+                "referencedDeclaration": 2169,
+                "src": "724:9:12",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_Challenge_$84_storage_ptr",
+                  "typeIdentifier": "t_struct$_Challenge_$2169_storage_ptr",
                   "typeString": "struct MotivatorBase.Challenge"
                 }
               }
@@ -564,13 +646,13 @@
           },
           {
             "constant": false,
-            "id": 105,
+            "id": 2190,
             "mutability": "mutable",
             "name": "speedrunRepo",
-            "nameLocation": "725:12:2",
+            "nameLocation": "760:12:12",
             "nodeType": "VariableDeclaration",
-            "scope": 198,
-            "src": "717:20:2",
+            "scope": 2289,
+            "src": "752:20:12",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -578,10 +660,10 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 104,
+              "id": 2189,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "717:7:2",
+              "src": "752:7:12",
               "stateMutability": "nonpayable",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
@@ -592,33 +674,33 @@
           },
           {
             "constant": false,
-            "id": 108,
+            "id": 2193,
             "mutability": "mutable",
             "name": "repo",
-            "nameLocation": "757:4:2",
+            "nameLocation": "792:4:12",
             "nodeType": "VariableDeclaration",
-            "scope": 198,
-            "src": "743:18:2",
+            "scope": 2289,
+            "src": "778:18:12",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_ISpeedRunRepo_$35",
+              "typeIdentifier": "t_contract$_ISpeedRunRepo_$2150",
               "typeString": "contract ISpeedRunRepo"
             },
             "typeName": {
-              "id": 107,
+              "id": 2192,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
-                "id": 106,
+                "id": 2191,
                 "name": "ISpeedRunRepo",
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 35,
-                "src": "743:13:2"
+                "referencedDeclaration": 2150,
+                "src": "778:13:12"
               },
-              "referencedDeclaration": 35,
-              "src": "743:13:2",
+              "referencedDeclaration": 2150,
+              "src": "778:13:12",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ISpeedRunRepo_$35",
+                "typeIdentifier": "t_contract$_ISpeedRunRepo_$2150",
                 "typeString": "contract ISpeedRunRepo"
               }
             },
@@ -626,24 +708,24 @@
           },
           {
             "body": {
-              "id": 123,
+              "id": 2208,
               "nodeType": "Block",
-              "src": "803:92:2",
+              "src": "838:92:12",
               "statements": [
                 {
                   "expression": {
-                    "id": 115,
+                    "id": 2200,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 113,
+                      "id": 2198,
                       "name": "speedrunRepo",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 105,
-                      "src": "813:12:2",
+                      "referencedDeclaration": 2190,
+                      "src": "848:12:12",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -652,43 +734,43 @@
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
-                      "id": 114,
+                      "id": 2199,
                       "name": "_spreedrunRepo",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 110,
-                      "src": "828:14:2",
+                      "referencedDeclaration": 2195,
+                      "src": "863:14:12",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "src": "813:29:2",
+                    "src": "848:29:12",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   },
-                  "id": 116,
+                  "id": 2201,
                   "nodeType": "ExpressionStatement",
-                  "src": "813:29:2"
+                  "src": "848:29:12"
                 },
                 {
                   "expression": {
-                    "id": 121,
+                    "id": 2206,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 117,
+                      "id": 2202,
                       "name": "repo",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 108,
-                      "src": "852:4:2",
+                      "referencedDeclaration": 2193,
+                      "src": "887:4:12",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_ISpeedRunRepo_$35",
+                        "typeIdentifier": "t_contract$_ISpeedRunRepo_$2150",
                         "typeString": "contract ISpeedRunRepo"
                       }
                     },
@@ -697,12 +779,12 @@
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 119,
+                          "id": 2204,
                           "name": "_spreedrunRepo",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 110,
-                          "src": "873:14:2",
+                          "referencedDeclaration": 2195,
+                          "src": "908:14:12",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -716,18 +798,18 @@
                             "typeString": "address"
                           }
                         ],
-                        "id": 118,
+                        "id": 2203,
                         "name": "ISpeedRunRepo",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 35,
-                        "src": "859:13:2",
+                        "referencedDeclaration": 2150,
+                        "src": "894:13:12",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_ISpeedRunRepo_$35_$",
+                          "typeIdentifier": "t_type$_t_contract$_ISpeedRunRepo_$2150_$",
                           "typeString": "type(contract ISpeedRunRepo)"
                         }
                       },
-                      "id": 120,
+                      "id": 2205,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -735,26 +817,26 @@
                       "lValueRequested": false,
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "859:29:2",
+                      "src": "894:29:12",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_ISpeedRunRepo_$35",
+                        "typeIdentifier": "t_contract$_ISpeedRunRepo_$2150",
                         "typeString": "contract ISpeedRunRepo"
                       }
                     },
-                    "src": "852:36:2",
+                    "src": "887:36:12",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_ISpeedRunRepo_$35",
+                      "typeIdentifier": "t_contract$_ISpeedRunRepo_$2150",
                       "typeString": "contract ISpeedRunRepo"
                     }
                   },
-                  "id": 122,
+                  "id": 2207,
                   "nodeType": "ExpressionStatement",
-                  "src": "852:36:2"
+                  "src": "887:36:12"
                 }
               ]
             },
-            "id": 124,
+            "id": 2209,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
@@ -762,18 +844,18 @@
             "nameLocation": "-1:-1:-1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 111,
+              "id": 2196,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 110,
+                  "id": 2195,
                   "mutability": "mutable",
                   "name": "_spreedrunRepo",
-                  "nameLocation": "788:14:2",
+                  "nameLocation": "823:14:12",
                   "nodeType": "VariableDeclaration",
-                  "scope": 124,
-                  "src": "780:22:2",
+                  "scope": 2209,
+                  "src": "815:22:12",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -781,10 +863,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 109,
+                    "id": 2194,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "780:7:2",
+                    "src": "815:7:12",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -794,42 +876,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "779:24:2"
+              "src": "814:24:12"
             },
             "returnParameters": {
-              "id": 112,
+              "id": 2197,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "803:0:2"
+              "src": "838:0:12"
             },
-            "scope": 198,
-            "src": "768:127:2",
+            "scope": 2289,
+            "src": "803:127:12",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "functionSelector": "a40d52ea",
-            "id": 129,
+            "functionSelector": "a05b4830",
+            "id": 2214,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
-            "name": "reclaim",
-            "nameLocation": "909:7:2",
+            "name": "reclaim_prize",
+            "nameLocation": "944:13:12",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 127,
+              "id": 2212,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 126,
+                  "id": 2211,
                   "mutability": "mutable",
                   "name": "challengeId",
-                  "nameLocation": "933:11:2",
+                  "nameLocation": "974:11:12",
                   "nodeType": "VariableDeclaration",
-                  "scope": 129,
-                  "src": "917:27:2",
+                  "scope": 2214,
+                  "src": "958:27:12",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -837,10 +919,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 125,
+                    "id": 2210,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "917:6:2",
+                    "src": "958:6:12",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -849,25 +931,25 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "916:29:2"
+              "src": "957:29:12"
             },
             "returnParameters": {
-              "id": 128,
+              "id": 2213,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "962:0:2"
+              "src": "1003:0:12"
             },
-            "scope": 198,
-            "src": "900:63:2",
+            "scope": 2289,
+            "src": "935:69:12",
             "stateMutability": "nonpayable",
             "virtual": true,
             "visibility": "external"
           },
           {
             "body": {
-              "id": 196,
+              "id": 2281,
               "nodeType": "Block",
-              "src": "1164:493:2",
+              "src": "1205:493:12",
               "statements": [
                 {
                   "expression": {
@@ -877,32 +959,32 @@
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 146,
+                        "id": 2231,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
                           "expression": {
-                            "id": 143,
+                            "id": 2228,
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 4294967281,
-                            "src": "1182:3:2",
+                            "src": "1223:3:12",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
                               "typeString": "msg"
                             }
                           },
-                          "id": 144,
+                          "id": 2229,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "memberName": "value",
                           "nodeType": "MemberAccess",
-                          "src": "1182:9:2",
+                          "src": "1223:9:12",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -912,21 +994,21 @@
                         "operator": ">",
                         "rightExpression": {
                           "hexValue": "30",
-                          "id": 145,
+                          "id": 2230,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "kind": "number",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "1194:1:2",
+                          "src": "1235:1:12",
                           "typeDescriptions": {
                             "typeIdentifier": "t_rational_0_by_1",
                             "typeString": "int_const 0"
                           },
                           "value": "0"
                         },
-                        "src": "1182:13:2",
+                        "src": "1223:13:12",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -934,14 +1016,14 @@
                       },
                       {
                         "hexValue": "4368616c6c656e676573206e65656420746f2070726f766964652066756e647320666f7220726577617264696e6720737065656472756e6e657273",
-                        "id": 147,
+                        "id": 2232,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "1197:61:2",
+                        "src": "1238:61:12",
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_5e431cbc3aa6514aefa3eeb87b004b52680fa39185c107f932c62a11b922eb97",
                           "typeString": "literal_string \"Challenges need to provide funds for rewarding speedrunners\""
@@ -960,7 +1042,7 @@
                           "typeString": "literal_string \"Challenges need to provide funds for rewarding speedrunners\""
                         }
                       ],
-                      "id": 142,
+                      "id": 2227,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -968,13 +1050,13 @@
                         4294967278
                       ],
                       "referencedDeclaration": 4294967278,
-                      "src": "1174:7:2",
+                      "src": "1215:7:12",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 148,
+                    "id": 2233,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -982,16 +1064,16 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1174:85:2",
+                    "src": "1215:85:12",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 149,
+                  "id": 2234,
                   "nodeType": "ExpressionStatement",
-                  "src": "1174:85:2"
+                  "src": "1215:85:12"
                 },
                 {
                   "expression": {
@@ -1001,18 +1083,18 @@
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 153,
+                        "id": 2238,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
-                          "id": 151,
+                          "id": 2236,
                           "name": "_time",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 137,
-                          "src": "1277:5:2",
+                          "referencedDeclaration": 2222,
+                          "src": "1318:5:12",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -1022,21 +1104,21 @@
                         "operator": ">",
                         "rightExpression": {
                           "hexValue": "30",
-                          "id": 152,
+                          "id": 2237,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "kind": "number",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "1285:1:2",
+                          "src": "1326:1:12",
                           "typeDescriptions": {
                             "typeIdentifier": "t_rational_0_by_1",
                             "typeString": "int_const 0"
                           },
                           "value": "0"
                         },
-                        "src": "1277:9:2",
+                        "src": "1318:9:12",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -1044,14 +1126,14 @@
                       },
                       {
                         "hexValue": "5468652074696d65206f6620746865206368616c6c656e6765206e6565647320746f2062652067726561746572207468616e207a65726f2e",
-                        "id": 154,
+                        "id": 2239,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "1288:58:2",
+                        "src": "1329:58:12",
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_5a632c19f67e38268a6346a27d07006c33d42e7a6dcbb5e7a0777624888d2b57",
                           "typeString": "literal_string \"The time of the challenge needs to be greater than zero.\""
@@ -1070,7 +1152,7 @@
                           "typeString": "literal_string \"The time of the challenge needs to be greater than zero.\""
                         }
                       ],
-                      "id": 150,
+                      "id": 2235,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -1078,13 +1160,13 @@
                         4294967278
                       ],
                       "referencedDeclaration": 4294967278,
-                      "src": "1269:7:2",
+                      "src": "1310:7:12",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 155,
+                    "id": 2240,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1092,16 +1174,16 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1269:78:2",
+                    "src": "1310:78:12",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 156,
+                  "id": 2241,
                   "nodeType": "ExpressionStatement",
-                  "src": "1269:78:2"
+                  "src": "1310:78:12"
                 },
                 {
                   "expression": {
@@ -1111,7 +1193,7 @@
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 163,
+                        "id": 2248,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1119,25 +1201,25 @@
                         "leftExpression": {
                           "expression": {
                             "baseExpression": {
-                              "id": 158,
+                              "id": 2243,
                               "name": "challenges",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 103,
-                              "src": "1365:10:2",
+                              "referencedDeclaration": 2188,
+                              "src": "1406:10:12",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Challenge_$84_storage_$",
+                                "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Challenge_$2169_storage_$",
                                 "typeString": "mapping(string memory => struct MotivatorBase.Challenge storage ref)"
                               }
                             },
-                            "id": 160,
+                            "id": 2245,
                             "indexExpression": {
-                              "id": 159,
+                              "id": 2244,
                               "name": "_challengeId",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 139,
-                              "src": "1376:12:2",
+                              "referencedDeclaration": 2224,
+                              "src": "1417:12:12",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_string_calldata_ptr",
                                 "typeString": "string calldata"
@@ -1148,21 +1230,21 @@
                             "isPure": false,
                             "lValueRequested": false,
                             "nodeType": "IndexAccess",
-                            "src": "1365:24:2",
+                            "src": "1406:24:12",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_Challenge_$84_storage",
+                              "typeIdentifier": "t_struct$_Challenge_$2169_storage",
                               "typeString": "struct MotivatorBase.Challenge storage ref"
                             }
                           },
-                          "id": 161,
+                          "id": 2246,
                           "isConstant": false,
                           "isLValue": true,
                           "isPure": false,
                           "lValueRequested": false,
                           "memberName": "time",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 79,
-                          "src": "1365:29:2",
+                          "referencedDeclaration": 2164,
+                          "src": "1406:29:12",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -1172,21 +1254,21 @@
                         "operator": "!=",
                         "rightExpression": {
                           "hexValue": "30",
-                          "id": 162,
+                          "id": 2247,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "kind": "number",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "1398:1:2",
+                          "src": "1439:1:12",
                           "typeDescriptions": {
                             "typeIdentifier": "t_rational_0_by_1",
                             "typeString": "int_const 0"
                           },
                           "value": "0"
                         },
-                        "src": "1365:34:2",
+                        "src": "1406:34:12",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -1194,14 +1276,14 @@
                       },
                       {
                         "hexValue": "4368616c6c656e6765496420616c726561647920757365642e",
-                        "id": 164,
+                        "id": 2249,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "1401:27:2",
+                        "src": "1442:27:12",
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_a7b591f54c8b3ba392ec635056c990d9fbf041fd18316e2e003c4f271c2762fb",
                           "typeString": "literal_string \"ChallengeId already used.\""
@@ -1220,7 +1302,7 @@
                           "typeString": "literal_string \"ChallengeId already used.\""
                         }
                       ],
-                      "id": 157,
+                      "id": 2242,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -1228,13 +1310,13 @@
                         4294967278
                       ],
                       "referencedDeclaration": 4294967278,
-                      "src": "1357:7:2",
+                      "src": "1398:7:12",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 165,
+                    "id": 2250,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1242,103 +1324,103 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1357:72:2",
+                    "src": "1398:72:12",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 166,
+                  "id": 2251,
                   "nodeType": "ExpressionStatement",
-                  "src": "1357:72:2"
+                  "src": "1398:72:12"
                 },
                 {
                   "assignments": [
-                    169
+                    2254
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 169,
+                      "id": 2254,
                       "mutability": "mutable",
                       "name": "c",
-                      "nameLocation": "1456:1:2",
+                      "nameLocation": "1497:1:12",
                       "nodeType": "VariableDeclaration",
-                      "scope": 196,
-                      "src": "1439:18:2",
+                      "scope": 2281,
+                      "src": "1480:18:12",
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Challenge_$84_memory_ptr",
+                        "typeIdentifier": "t_struct$_Challenge_$2169_memory_ptr",
                         "typeString": "struct MotivatorBase.Challenge"
                       },
                       "typeName": {
-                        "id": 168,
+                        "id": 2253,
                         "nodeType": "UserDefinedTypeName",
                         "pathNode": {
-                          "id": 167,
+                          "id": 2252,
                           "name": "Challenge",
                           "nodeType": "IdentifierPath",
-                          "referencedDeclaration": 84,
-                          "src": "1439:9:2"
+                          "referencedDeclaration": 2169,
+                          "src": "1480:9:12"
                         },
-                        "referencedDeclaration": 84,
-                        "src": "1439:9:2",
+                        "referencedDeclaration": 2169,
+                        "src": "1480:9:12",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Challenge_$84_storage_ptr",
+                          "typeIdentifier": "t_struct$_Challenge_$2169_storage_ptr",
                           "typeString": "struct MotivatorBase.Challenge"
                         }
                       },
                       "visibility": "internal"
                     }
                   ],
-                  "id": 179,
+                  "id": 2264,
                   "initialValue": {
                     "arguments": [
                       {
-                        "id": 171,
+                        "id": 2256,
                         "name": "_userId",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 131,
-                        "src": "1470:7:2",
+                        "referencedDeclaration": 2216,
+                        "src": "1511:7:12",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_calldata_ptr",
                           "typeString": "string calldata"
                         }
                       },
                       {
-                        "id": 172,
+                        "id": 2257,
                         "name": "_gameId",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 133,
-                        "src": "1479:7:2",
+                        "referencedDeclaration": 2218,
+                        "src": "1520:7:12",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_calldata_ptr",
                           "typeString": "string calldata"
                         }
                       },
                       {
-                        "id": 173,
+                        "id": 2258,
                         "name": "_levelId",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 135,
-                        "src": "1488:8:2",
+                        "referencedDeclaration": 2220,
+                        "src": "1529:8:12",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_calldata_ptr",
                           "typeString": "string calldata"
                         }
                       },
                       {
-                        "id": 174,
+                        "id": 2259,
                         "name": "_time",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 137,
-                        "src": "1498:5:2",
+                        "referencedDeclaration": 2222,
+                        "src": "1539:5:12",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -1346,25 +1428,25 @@
                       },
                       {
                         "expression": {
-                          "id": 175,
+                          "id": 2260,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 4294967281,
-                          "src": "1505:3:2",
+                          "src": "1546:3:12",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
                           }
                         },
-                        "id": 176,
+                        "id": 2261,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "value",
                         "nodeType": "MemberAccess",
-                        "src": "1505:9:2",
+                        "src": "1546:9:12",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -1372,14 +1454,14 @@
                       },
                       {
                         "hexValue": "66616c7365",
-                        "id": 177,
+                        "id": 2262,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "bool",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "1516:5:2",
+                        "src": "1557:5:12",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -1414,18 +1496,18 @@
                           "typeString": "bool"
                         }
                       ],
-                      "id": 170,
+                      "id": 2255,
                       "name": "Challenge",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 84,
-                      "src": "1460:9:2",
+                      "referencedDeclaration": 2169,
+                      "src": "1501:9:12",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_type$_t_struct$_Challenge_$84_storage_ptr_$",
+                        "typeIdentifier": "t_type$_t_struct$_Challenge_$2169_storage_ptr_$",
                         "typeString": "type(struct MotivatorBase.Challenge storage pointer)"
                       }
                     },
-                    "id": 178,
+                    "id": 2263,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1433,44 +1515,44 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1460:62:2",
+                    "src": "1501:62:12",
                     "tryCall": false,
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Challenge_$84_memory_ptr",
+                      "typeIdentifier": "t_struct$_Challenge_$2169_memory_ptr",
                       "typeString": "struct MotivatorBase.Challenge memory"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "1439:83:2"
+                  "src": "1480:83:12"
                 },
                 {
                   "expression": {
-                    "id": 184,
+                    "id": 2269,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "baseExpression": {
-                        "id": 180,
+                        "id": 2265,
                         "name": "challenges",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 103,
-                        "src": "1532:10:2",
+                        "referencedDeclaration": 2188,
+                        "src": "1573:10:12",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Challenge_$84_storage_$",
+                          "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Challenge_$2169_storage_$",
                           "typeString": "mapping(string memory => struct MotivatorBase.Challenge storage ref)"
                         }
                       },
-                      "id": 182,
+                      "id": 2267,
                       "indexExpression": {
-                        "id": 181,
+                        "id": 2266,
                         "name": "_challengeId",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 139,
-                        "src": "1543:12:2",
+                        "referencedDeclaration": 2224,
+                        "src": "1584:12:12",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_calldata_ptr",
                           "typeString": "string calldata"
@@ -1481,94 +1563,94 @@
                       "isPure": false,
                       "lValueRequested": true,
                       "nodeType": "IndexAccess",
-                      "src": "1532:24:2",
+                      "src": "1573:24:12",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Challenge_$84_storage",
+                        "typeIdentifier": "t_struct$_Challenge_$2169_storage",
                         "typeString": "struct MotivatorBase.Challenge storage ref"
                       }
                     },
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
-                      "id": 183,
+                      "id": 2268,
                       "name": "c",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 169,
-                      "src": "1559:1:2",
+                      "referencedDeclaration": 2254,
+                      "src": "1600:1:12",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Challenge_$84_memory_ptr",
+                        "typeIdentifier": "t_struct$_Challenge_$2169_memory_ptr",
                         "typeString": "struct MotivatorBase.Challenge memory"
                       }
                     },
-                    "src": "1532:28:2",
+                    "src": "1573:28:12",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Challenge_$84_storage",
+                      "typeIdentifier": "t_struct$_Challenge_$2169_storage",
                       "typeString": "struct MotivatorBase.Challenge storage ref"
                     }
                   },
-                  "id": 185,
+                  "id": 2270,
                   "nodeType": "ExpressionStatement",
-                  "src": "1532:28:2"
+                  "src": "1573:28:12"
                 },
                 {
                   "eventCall": {
                     "arguments": [
                       {
-                        "id": 187,
+                        "id": 2272,
                         "name": "_challengeId",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 139,
-                        "src": "1591:12:2",
+                        "referencedDeclaration": 2224,
+                        "src": "1632:12:12",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_calldata_ptr",
                           "typeString": "string calldata"
                         }
                       },
                       {
-                        "id": 188,
+                        "id": 2273,
                         "name": "_userId",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 131,
-                        "src": "1605:7:2",
+                        "referencedDeclaration": 2216,
+                        "src": "1646:7:12",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_calldata_ptr",
                           "typeString": "string calldata"
                         }
                       },
                       {
-                        "id": 189,
+                        "id": 2274,
                         "name": "_gameId",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 133,
-                        "src": "1614:7:2",
+                        "referencedDeclaration": 2218,
+                        "src": "1655:7:12",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_calldata_ptr",
                           "typeString": "string calldata"
                         }
                       },
                       {
-                        "id": 190,
+                        "id": 2275,
                         "name": "_levelId",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 135,
-                        "src": "1623:8:2",
+                        "referencedDeclaration": 2220,
+                        "src": "1664:8:12",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_calldata_ptr",
                           "typeString": "string calldata"
                         }
                       },
                       {
-                        "id": 191,
+                        "id": 2276,
                         "name": "_time",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 137,
-                        "src": "1633:5:2",
+                        "referencedDeclaration": 2222,
+                        "src": "1674:5:12",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -1576,25 +1658,25 @@
                       },
                       {
                         "expression": {
-                          "id": 192,
+                          "id": 2277,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 4294967281,
-                          "src": "1640:3:2",
+                          "src": "1681:3:12",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
                           }
                         },
-                        "id": 193,
+                        "id": 2278,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "value",
                         "nodeType": "MemberAccess",
-                        "src": "1640:9:2",
+                        "src": "1681:9:12",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -1628,18 +1710,18 @@
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 186,
+                      "id": 2271,
                       "name": "ChallengePlaced",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 98,
-                      "src": "1575:15:2",
+                      "referencedDeclaration": 2183,
+                      "src": "1616:15:12",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_uint256_$_t_uint256_$returns$__$",
                         "typeString": "function (string memory,string memory,string memory,string memory,uint256,uint256)"
                       }
                     },
-                    "id": 194,
+                    "id": 2279,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1647,40 +1729,40 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1575:75:2",
+                    "src": "1616:75:12",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 195,
+                  "id": 2280,
                   "nodeType": "EmitStatement",
-                  "src": "1570:80:2"
+                  "src": "1611:80:12"
                 }
               ]
             },
             "functionSelector": "9d84184e",
-            "id": 197,
+            "id": 2282,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "place_challenge",
-            "nameLocation": "977:15:2",
+            "nameLocation": "1018:15:12",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 140,
+              "id": 2225,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 131,
+                  "id": 2216,
                   "mutability": "mutable",
                   "name": "_userId",
-                  "nameLocation": "1009:7:2",
+                  "nameLocation": "1050:7:12",
                   "nodeType": "VariableDeclaration",
-                  "scope": 197,
-                  "src": "993:23:2",
+                  "scope": 2282,
+                  "src": "1034:23:12",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -1688,10 +1770,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 130,
+                    "id": 2215,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "993:6:2",
+                    "src": "1034:6:12",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1701,13 +1783,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 133,
+                  "id": 2218,
                   "mutability": "mutable",
                   "name": "_gameId",
-                  "nameLocation": "1034:7:2",
+                  "nameLocation": "1075:7:12",
                   "nodeType": "VariableDeclaration",
-                  "scope": 197,
-                  "src": "1018:23:2",
+                  "scope": 2282,
+                  "src": "1059:23:12",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -1715,10 +1797,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 132,
+                    "id": 2217,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1018:6:2",
+                    "src": "1059:6:12",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1728,13 +1810,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 135,
+                  "id": 2220,
                   "mutability": "mutable",
                   "name": "_levelId",
-                  "nameLocation": "1059:8:2",
+                  "nameLocation": "1100:8:12",
                   "nodeType": "VariableDeclaration",
-                  "scope": 197,
-                  "src": "1043:24:2",
+                  "scope": 2282,
+                  "src": "1084:24:12",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -1742,10 +1824,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 134,
+                    "id": 2219,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1043:6:2",
+                    "src": "1084:6:12",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1755,13 +1837,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 137,
+                  "id": 2222,
                   "mutability": "mutable",
                   "name": "_time",
-                  "nameLocation": "1103:5:2",
+                  "nameLocation": "1144:5:12",
                   "nodeType": "VariableDeclaration",
-                  "scope": 197,
-                  "src": "1098:10:2",
+                  "scope": 2282,
+                  "src": "1139:10:12",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1769,10 +1851,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 136,
+                    "id": 2221,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1098:4:2",
+                    "src": "1139:4:12",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1782,13 +1864,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 139,
+                  "id": 2224,
                   "mutability": "mutable",
                   "name": "_challengeId",
-                  "nameLocation": "1126:12:2",
+                  "nameLocation": "1167:12:12",
                   "nodeType": "VariableDeclaration",
-                  "scope": 197,
-                  "src": "1110:28:2",
+                  "scope": 2282,
+                  "src": "1151:28:12",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -1796,10 +1878,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 138,
+                    "id": 2223,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1110:6:2",
+                    "src": "1151:6:12",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1808,92 +1890,169 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "992:147:2"
+              "src": "1033:147:12"
             },
             "returnParameters": {
-              "id": 141,
+              "id": 2226,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1164:0:2"
+              "src": "1205:0:12"
             },
-            "scope": 198,
-            "src": "968:689:2",
+            "scope": 2289,
+            "src": "1009:689:12",
             "stateMutability": "payable",
             "virtual": true,
             "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 2287,
+              "nodeType": "Block",
+              "src": "1763:8:12",
+              "statements": []
+            },
+            "functionSelector": "fcad79a3",
+            "id": 2288,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "id": 2285,
+                "kind": "modifierInvocation",
+                "modifierName": {
+                  "id": 2284,
+                  "name": "onlyOwner",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 2333,
+                  "src": "1753:9:12"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1753:9:12"
+              }
+            ],
+            "name": "return_funds_and_destroy",
+            "nameLocation": "1717:24:12",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2283,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1741:2:12"
+            },
+            "returnParameters": {
+              "id": 2286,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1763:0:12"
+            },
+            "scope": 2289,
+            "src": "1708:63:12",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
           }
         ],
-        "scope": 199,
-        "src": "263:1397:2",
+        "scope": 2290,
+        "src": "287:1486:12",
         "usedErrors": []
       }
     ],
-    "src": "36:1624:2"
+    "src": "36:1737:12"
   },
   "legacyAST": {
-    "absolutePath": "/Users/msicilia/Desktop/dev/lrn/consensys/blockchain-developer-bootcamp-final-project/contracts/MotivatorBase.sol",
+    "absolutePath": "project:/contracts/MotivatorBase.sol",
     "exportedSymbols": {
       "ISpeedRunRepo": [
-        35
+        2150
       ],
       "MotivatorBase": [
-        198
+        2289
+      ],
+      "Ownable": [
+        2377
       ]
     },
-    "id": 199,
+    "id": 2290,
     "license": "GPL-3.0",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 70,
+        "id": 2152,
         "literals": [
           "solidity",
           "^",
           "0.8",
-          ".7"
+          ".10"
         ],
         "nodeType": "PragmaDirective",
-        "src": "36:23:2"
+        "src": "36:24:12"
       },
       {
-        "absolutePath": "/Users/msicilia/Desktop/dev/lrn/consensys/blockchain-developer-bootcamp-final-project/contracts/ISpeedRunRepo.sol",
+        "absolutePath": "project:/contracts/ISpeedRunRepo.sol",
         "file": "./ISpeedRunRepo.sol",
-        "id": 71,
+        "id": 2153,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 199,
-        "sourceUnit": 36,
-        "src": "231:29:2",
+        "scope": 2290,
+        "sourceUnit": 2151,
+        "src": "232:29:12",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/contracts/Ownable.sol",
+        "file": "./Ownable.sol",
+        "id": 2154,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 2290,
+        "sourceUnit": 2378,
+        "src": "262:23:12",
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
         "abstract": true,
-        "baseContracts": [],
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 2155,
+              "name": "Ownable",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 2377,
+              "src": "322:7:12"
+            },
+            "id": 2156,
+            "nodeType": "InheritanceSpecifier",
+            "src": "322:7:12"
+          }
+        ],
+        "canonicalName": "MotivatorBase",
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": false,
-        "id": 198,
+        "id": 2289,
         "linearizedBaseContracts": [
-          198
+          2289,
+          2377
         ],
         "name": "MotivatorBase",
-        "nameLocation": "281:13:2",
+        "nameLocation": "305:13:12",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "MotivatorBase.Challenge",
-            "id": 84,
+            "id": 2169,
             "members": [
               {
                 "constant": false,
-                "id": 73,
+                "id": 2158,
                 "mutability": "mutable",
                 "name": "userId",
-                "nameLocation": "334:6:2",
+                "nameLocation": "369:6:12",
                 "nodeType": "VariableDeclaration",
-                "scope": 84,
-                "src": "327:13:2",
+                "scope": 2169,
+                "src": "362:13:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -1901,10 +2060,10 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 72,
+                  "id": 2157,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
-                  "src": "327:6:2",
+                  "src": "362:6:12",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_storage_ptr",
                     "typeString": "string"
@@ -1914,13 +2073,13 @@
               },
               {
                 "constant": false,
-                "id": 75,
+                "id": 2160,
                 "mutability": "mutable",
                 "name": "gameId",
-                "nameLocation": "357:6:2",
+                "nameLocation": "392:6:12",
                 "nodeType": "VariableDeclaration",
-                "scope": 84,
-                "src": "350:13:2",
+                "scope": 2169,
+                "src": "385:13:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -1928,10 +2087,10 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 74,
+                  "id": 2159,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
-                  "src": "350:6:2",
+                  "src": "385:6:12",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_storage_ptr",
                     "typeString": "string"
@@ -1941,13 +2100,13 @@
               },
               {
                 "constant": false,
-                "id": 77,
+                "id": 2162,
                 "mutability": "mutable",
                 "name": "levelId",
-                "nameLocation": "380:7:2",
+                "nameLocation": "415:7:12",
                 "nodeType": "VariableDeclaration",
-                "scope": 84,
-                "src": "373:14:2",
+                "scope": 2169,
+                "src": "408:14:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -1955,10 +2114,10 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 76,
+                  "id": 2161,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
-                  "src": "373:6:2",
+                  "src": "408:6:12",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_storage_ptr",
                     "typeString": "string"
@@ -1968,13 +2127,13 @@
               },
               {
                 "constant": false,
-                "id": 79,
+                "id": 2164,
                 "mutability": "mutable",
                 "name": "time",
-                "nameLocation": "402:4:2",
+                "nameLocation": "437:4:12",
                 "nodeType": "VariableDeclaration",
-                "scope": 84,
-                "src": "397:9:2",
+                "scope": 2169,
+                "src": "432:9:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -1982,10 +2141,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 78,
+                  "id": 2163,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
-                  "src": "397:4:2",
+                  "src": "432:4:12",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -1995,13 +2154,13 @@
               },
               {
                 "constant": false,
-                "id": 81,
+                "id": 2166,
                 "mutability": "mutable",
                 "name": "prize",
-                "nameLocation": "421:5:2",
+                "nameLocation": "456:5:12",
                 "nodeType": "VariableDeclaration",
-                "scope": 84,
-                "src": "416:10:2",
+                "scope": 2169,
+                "src": "451:10:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -2009,10 +2168,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 80,
+                  "id": 2165,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
-                  "src": "416:4:2",
+                  "src": "451:4:12",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -2022,13 +2181,13 @@
               },
               {
                 "constant": false,
-                "id": 83,
+                "id": 2168,
                 "mutability": "mutable",
                 "name": "reclaimed",
-                "nameLocation": "442:9:2",
+                "nameLocation": "477:9:12",
                 "nodeType": "VariableDeclaration",
-                "scope": 84,
-                "src": "437:14:2",
+                "scope": 2169,
+                "src": "472:14:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -2036,10 +2195,10 @@
                   "typeString": "bool"
                 },
                 "typeName": {
-                  "id": 82,
+                  "id": 2167,
                   "name": "bool",
                   "nodeType": "ElementaryTypeName",
-                  "src": "437:4:2",
+                  "src": "472:4:12",
                   "typeDescriptions": {
                     "typeIdentifier": "t_bool",
                     "typeString": "bool"
@@ -2049,32 +2208,32 @@
               }
             ],
             "name": "Challenge",
-            "nameLocation": "307:9:2",
+            "nameLocation": "342:9:12",
             "nodeType": "StructDefinition",
-            "scope": 198,
-            "src": "300:158:2",
+            "scope": 2289,
+            "src": "335:158:12",
             "visibility": "public"
           },
           {
             "anonymous": false,
-            "id": 98,
+            "id": 2183,
             "name": "ChallengePlaced",
-            "nameLocation": "469:15:2",
+            "nameLocation": "504:15:12",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 97,
+              "id": 2182,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 86,
+                  "id": 2171,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "challengeId",
-                  "nameLocation": "501:11:2",
+                  "nameLocation": "536:11:12",
                   "nodeType": "VariableDeclaration",
-                  "scope": 98,
-                  "src": "494:18:2",
+                  "scope": 2183,
+                  "src": "529:18:12",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2082,10 +2241,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 85,
+                    "id": 2170,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "494:6:2",
+                    "src": "529:6:12",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -2095,14 +2254,14 @@
                 },
                 {
                   "constant": false,
-                  "id": 88,
+                  "id": 2173,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "userId",
-                  "nameLocation": "537:6:2",
+                  "nameLocation": "572:6:12",
                   "nodeType": "VariableDeclaration",
-                  "scope": 98,
-                  "src": "522:21:2",
+                  "scope": 2183,
+                  "src": "557:21:12",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2110,10 +2269,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 87,
+                    "id": 2172,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "522:6:2",
+                    "src": "557:6:12",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -2123,14 +2282,14 @@
                 },
                 {
                   "constant": false,
-                  "id": 90,
+                  "id": 2175,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "gameId",
-                  "nameLocation": "569:6:2",
+                  "nameLocation": "604:6:12",
                   "nodeType": "VariableDeclaration",
-                  "scope": 98,
-                  "src": "554:21:2",
+                  "scope": 2183,
+                  "src": "589:21:12",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2138,10 +2297,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 89,
+                    "id": 2174,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "554:6:2",
+                    "src": "589:6:12",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -2151,14 +2310,14 @@
                 },
                 {
                   "constant": false,
-                  "id": 92,
+                  "id": 2177,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "levelId",
-                  "nameLocation": "600:7:2",
+                  "nameLocation": "635:7:12",
                   "nodeType": "VariableDeclaration",
-                  "scope": 98,
-                  "src": "585:22:2",
+                  "scope": 2183,
+                  "src": "620:22:12",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2166,10 +2325,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 91,
+                    "id": 2176,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "585:6:2",
+                    "src": "620:6:12",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -2179,14 +2338,14 @@
                 },
                 {
                   "constant": false,
-                  "id": 94,
+                  "id": 2179,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "time",
-                  "nameLocation": "622:4:2",
+                  "nameLocation": "657:4:12",
                   "nodeType": "VariableDeclaration",
-                  "scope": 98,
-                  "src": "617:9:2",
+                  "scope": 2183,
+                  "src": "652:9:12",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2194,10 +2353,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 93,
+                    "id": 2178,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "617:4:2",
+                    "src": "652:4:12",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2207,14 +2366,14 @@
                 },
                 {
                   "constant": false,
-                  "id": 96,
+                  "id": 2181,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "prize",
-                  "nameLocation": "641:5:2",
+                  "nameLocation": "676:5:12",
                   "nodeType": "VariableDeclaration",
-                  "scope": 98,
-                  "src": "636:10:2",
+                  "scope": 2183,
+                  "src": "671:10:12",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2222,10 +2381,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 95,
+                    "id": 2180,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "636:4:2",
+                    "src": "671:4:12",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2234,57 +2393,57 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "484:174:2"
+              "src": "519:174:12"
             },
-            "src": "463:196:2"
+            "src": "498:196:12"
           },
           {
             "constant": false,
-            "id": 103,
+            "id": 2188,
             "mutability": "mutable",
             "name": "challenges",
-            "nameLocation": "700:10:2",
+            "nameLocation": "735:10:12",
             "nodeType": "VariableDeclaration",
-            "scope": 198,
-            "src": "670:40:2",
+            "scope": 2289,
+            "src": "705:40:12",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Challenge_$84_storage_$",
+              "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Challenge_$2169_storage_$",
               "typeString": "mapping(string => struct MotivatorBase.Challenge)"
             },
             "typeName": {
-              "id": 102,
+              "id": 2187,
               "keyType": {
-                "id": 99,
+                "id": 2184,
                 "name": "string",
                 "nodeType": "ElementaryTypeName",
-                "src": "679:6:2",
+                "src": "714:6:12",
                 "typeDescriptions": {
                   "typeIdentifier": "t_string_storage_ptr",
                   "typeString": "string"
                 }
               },
               "nodeType": "Mapping",
-              "src": "670:29:2",
+              "src": "705:29:12",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Challenge_$84_storage_$",
+                "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Challenge_$2169_storage_$",
                 "typeString": "mapping(string => struct MotivatorBase.Challenge)"
               },
               "valueType": {
-                "id": 101,
+                "id": 2186,
                 "nodeType": "UserDefinedTypeName",
                 "pathNode": {
-                  "id": 100,
+                  "id": 2185,
                   "name": "Challenge",
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 84,
-                  "src": "689:9:2"
+                  "referencedDeclaration": 2169,
+                  "src": "724:9:12"
                 },
-                "referencedDeclaration": 84,
-                "src": "689:9:2",
+                "referencedDeclaration": 2169,
+                "src": "724:9:12",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_Challenge_$84_storage_ptr",
+                  "typeIdentifier": "t_struct$_Challenge_$2169_storage_ptr",
                   "typeString": "struct MotivatorBase.Challenge"
                 }
               }
@@ -2293,13 +2452,13 @@
           },
           {
             "constant": false,
-            "id": 105,
+            "id": 2190,
             "mutability": "mutable",
             "name": "speedrunRepo",
-            "nameLocation": "725:12:2",
+            "nameLocation": "760:12:12",
             "nodeType": "VariableDeclaration",
-            "scope": 198,
-            "src": "717:20:2",
+            "scope": 2289,
+            "src": "752:20:12",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -2307,10 +2466,10 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 104,
+              "id": 2189,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "717:7:2",
+              "src": "752:7:12",
               "stateMutability": "nonpayable",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
@@ -2321,33 +2480,33 @@
           },
           {
             "constant": false,
-            "id": 108,
+            "id": 2193,
             "mutability": "mutable",
             "name": "repo",
-            "nameLocation": "757:4:2",
+            "nameLocation": "792:4:12",
             "nodeType": "VariableDeclaration",
-            "scope": 198,
-            "src": "743:18:2",
+            "scope": 2289,
+            "src": "778:18:12",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_ISpeedRunRepo_$35",
+              "typeIdentifier": "t_contract$_ISpeedRunRepo_$2150",
               "typeString": "contract ISpeedRunRepo"
             },
             "typeName": {
-              "id": 107,
+              "id": 2192,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
-                "id": 106,
+                "id": 2191,
                 "name": "ISpeedRunRepo",
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 35,
-                "src": "743:13:2"
+                "referencedDeclaration": 2150,
+                "src": "778:13:12"
               },
-              "referencedDeclaration": 35,
-              "src": "743:13:2",
+              "referencedDeclaration": 2150,
+              "src": "778:13:12",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ISpeedRunRepo_$35",
+                "typeIdentifier": "t_contract$_ISpeedRunRepo_$2150",
                 "typeString": "contract ISpeedRunRepo"
               }
             },
@@ -2355,24 +2514,24 @@
           },
           {
             "body": {
-              "id": 123,
+              "id": 2208,
               "nodeType": "Block",
-              "src": "803:92:2",
+              "src": "838:92:12",
               "statements": [
                 {
                   "expression": {
-                    "id": 115,
+                    "id": 2200,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 113,
+                      "id": 2198,
                       "name": "speedrunRepo",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 105,
-                      "src": "813:12:2",
+                      "referencedDeclaration": 2190,
+                      "src": "848:12:12",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -2381,43 +2540,43 @@
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
-                      "id": 114,
+                      "id": 2199,
                       "name": "_spreedrunRepo",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 110,
-                      "src": "828:14:2",
+                      "referencedDeclaration": 2195,
+                      "src": "863:14:12",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "src": "813:29:2",
+                    "src": "848:29:12",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   },
-                  "id": 116,
+                  "id": 2201,
                   "nodeType": "ExpressionStatement",
-                  "src": "813:29:2"
+                  "src": "848:29:12"
                 },
                 {
                   "expression": {
-                    "id": 121,
+                    "id": 2206,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 117,
+                      "id": 2202,
                       "name": "repo",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 108,
-                      "src": "852:4:2",
+                      "referencedDeclaration": 2193,
+                      "src": "887:4:12",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_ISpeedRunRepo_$35",
+                        "typeIdentifier": "t_contract$_ISpeedRunRepo_$2150",
                         "typeString": "contract ISpeedRunRepo"
                       }
                     },
@@ -2426,12 +2585,12 @@
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 119,
+                          "id": 2204,
                           "name": "_spreedrunRepo",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 110,
-                          "src": "873:14:2",
+                          "referencedDeclaration": 2195,
+                          "src": "908:14:12",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -2445,18 +2604,18 @@
                             "typeString": "address"
                           }
                         ],
-                        "id": 118,
+                        "id": 2203,
                         "name": "ISpeedRunRepo",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 35,
-                        "src": "859:13:2",
+                        "referencedDeclaration": 2150,
+                        "src": "894:13:12",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_ISpeedRunRepo_$35_$",
+                          "typeIdentifier": "t_type$_t_contract$_ISpeedRunRepo_$2150_$",
                           "typeString": "type(contract ISpeedRunRepo)"
                         }
                       },
-                      "id": 120,
+                      "id": 2205,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -2464,26 +2623,26 @@
                       "lValueRequested": false,
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "859:29:2",
+                      "src": "894:29:12",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_ISpeedRunRepo_$35",
+                        "typeIdentifier": "t_contract$_ISpeedRunRepo_$2150",
                         "typeString": "contract ISpeedRunRepo"
                       }
                     },
-                    "src": "852:36:2",
+                    "src": "887:36:12",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_ISpeedRunRepo_$35",
+                      "typeIdentifier": "t_contract$_ISpeedRunRepo_$2150",
                       "typeString": "contract ISpeedRunRepo"
                     }
                   },
-                  "id": 122,
+                  "id": 2207,
                   "nodeType": "ExpressionStatement",
-                  "src": "852:36:2"
+                  "src": "887:36:12"
                 }
               ]
             },
-            "id": 124,
+            "id": 2209,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
@@ -2491,18 +2650,18 @@
             "nameLocation": "-1:-1:-1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 111,
+              "id": 2196,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 110,
+                  "id": 2195,
                   "mutability": "mutable",
                   "name": "_spreedrunRepo",
-                  "nameLocation": "788:14:2",
+                  "nameLocation": "823:14:12",
                   "nodeType": "VariableDeclaration",
-                  "scope": 124,
-                  "src": "780:22:2",
+                  "scope": 2209,
+                  "src": "815:22:12",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2510,10 +2669,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 109,
+                    "id": 2194,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "780:7:2",
+                    "src": "815:7:12",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -2523,42 +2682,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "779:24:2"
+              "src": "814:24:12"
             },
             "returnParameters": {
-              "id": 112,
+              "id": 2197,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "803:0:2"
+              "src": "838:0:12"
             },
-            "scope": 198,
-            "src": "768:127:2",
+            "scope": 2289,
+            "src": "803:127:12",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "functionSelector": "a40d52ea",
-            "id": 129,
+            "functionSelector": "a05b4830",
+            "id": 2214,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
-            "name": "reclaim",
-            "nameLocation": "909:7:2",
+            "name": "reclaim_prize",
+            "nameLocation": "944:13:12",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 127,
+              "id": 2212,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 126,
+                  "id": 2211,
                   "mutability": "mutable",
                   "name": "challengeId",
-                  "nameLocation": "933:11:2",
+                  "nameLocation": "974:11:12",
                   "nodeType": "VariableDeclaration",
-                  "scope": 129,
-                  "src": "917:27:2",
+                  "scope": 2214,
+                  "src": "958:27:12",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -2566,10 +2725,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 125,
+                    "id": 2210,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "917:6:2",
+                    "src": "958:6:12",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -2578,25 +2737,25 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "916:29:2"
+              "src": "957:29:12"
             },
             "returnParameters": {
-              "id": 128,
+              "id": 2213,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "962:0:2"
+              "src": "1003:0:12"
             },
-            "scope": 198,
-            "src": "900:63:2",
+            "scope": 2289,
+            "src": "935:69:12",
             "stateMutability": "nonpayable",
             "virtual": true,
             "visibility": "external"
           },
           {
             "body": {
-              "id": 196,
+              "id": 2281,
               "nodeType": "Block",
-              "src": "1164:493:2",
+              "src": "1205:493:12",
               "statements": [
                 {
                   "expression": {
@@ -2606,32 +2765,32 @@
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 146,
+                        "id": 2231,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
                           "expression": {
-                            "id": 143,
+                            "id": 2228,
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 4294967281,
-                            "src": "1182:3:2",
+                            "src": "1223:3:12",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
                               "typeString": "msg"
                             }
                           },
-                          "id": 144,
+                          "id": 2229,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "memberName": "value",
                           "nodeType": "MemberAccess",
-                          "src": "1182:9:2",
+                          "src": "1223:9:12",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -2641,21 +2800,21 @@
                         "operator": ">",
                         "rightExpression": {
                           "hexValue": "30",
-                          "id": 145,
+                          "id": 2230,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "kind": "number",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "1194:1:2",
+                          "src": "1235:1:12",
                           "typeDescriptions": {
                             "typeIdentifier": "t_rational_0_by_1",
                             "typeString": "int_const 0"
                           },
                           "value": "0"
                         },
-                        "src": "1182:13:2",
+                        "src": "1223:13:12",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -2663,14 +2822,14 @@
                       },
                       {
                         "hexValue": "4368616c6c656e676573206e65656420746f2070726f766964652066756e647320666f7220726577617264696e6720737065656472756e6e657273",
-                        "id": 147,
+                        "id": 2232,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "1197:61:2",
+                        "src": "1238:61:12",
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_5e431cbc3aa6514aefa3eeb87b004b52680fa39185c107f932c62a11b922eb97",
                           "typeString": "literal_string \"Challenges need to provide funds for rewarding speedrunners\""
@@ -2689,7 +2848,7 @@
                           "typeString": "literal_string \"Challenges need to provide funds for rewarding speedrunners\""
                         }
                       ],
-                      "id": 142,
+                      "id": 2227,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -2697,13 +2856,13 @@
                         4294967278
                       ],
                       "referencedDeclaration": 4294967278,
-                      "src": "1174:7:2",
+                      "src": "1215:7:12",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 148,
+                    "id": 2233,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2711,16 +2870,16 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1174:85:2",
+                    "src": "1215:85:12",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 149,
+                  "id": 2234,
                   "nodeType": "ExpressionStatement",
-                  "src": "1174:85:2"
+                  "src": "1215:85:12"
                 },
                 {
                   "expression": {
@@ -2730,18 +2889,18 @@
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 153,
+                        "id": 2238,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
-                          "id": 151,
+                          "id": 2236,
                           "name": "_time",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 137,
-                          "src": "1277:5:2",
+                          "referencedDeclaration": 2222,
+                          "src": "1318:5:12",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -2751,21 +2910,21 @@
                         "operator": ">",
                         "rightExpression": {
                           "hexValue": "30",
-                          "id": 152,
+                          "id": 2237,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "kind": "number",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "1285:1:2",
+                          "src": "1326:1:12",
                           "typeDescriptions": {
                             "typeIdentifier": "t_rational_0_by_1",
                             "typeString": "int_const 0"
                           },
                           "value": "0"
                         },
-                        "src": "1277:9:2",
+                        "src": "1318:9:12",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -2773,14 +2932,14 @@
                       },
                       {
                         "hexValue": "5468652074696d65206f6620746865206368616c6c656e6765206e6565647320746f2062652067726561746572207468616e207a65726f2e",
-                        "id": 154,
+                        "id": 2239,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "1288:58:2",
+                        "src": "1329:58:12",
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_5a632c19f67e38268a6346a27d07006c33d42e7a6dcbb5e7a0777624888d2b57",
                           "typeString": "literal_string \"The time of the challenge needs to be greater than zero.\""
@@ -2799,7 +2958,7 @@
                           "typeString": "literal_string \"The time of the challenge needs to be greater than zero.\""
                         }
                       ],
-                      "id": 150,
+                      "id": 2235,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -2807,13 +2966,13 @@
                         4294967278
                       ],
                       "referencedDeclaration": 4294967278,
-                      "src": "1269:7:2",
+                      "src": "1310:7:12",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 155,
+                    "id": 2240,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2821,16 +2980,16 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1269:78:2",
+                    "src": "1310:78:12",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 156,
+                  "id": 2241,
                   "nodeType": "ExpressionStatement",
-                  "src": "1269:78:2"
+                  "src": "1310:78:12"
                 },
                 {
                   "expression": {
@@ -2840,7 +2999,7 @@
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 163,
+                        "id": 2248,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -2848,25 +3007,25 @@
                         "leftExpression": {
                           "expression": {
                             "baseExpression": {
-                              "id": 158,
+                              "id": 2243,
                               "name": "challenges",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 103,
-                              "src": "1365:10:2",
+                              "referencedDeclaration": 2188,
+                              "src": "1406:10:12",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Challenge_$84_storage_$",
+                                "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Challenge_$2169_storage_$",
                                 "typeString": "mapping(string memory => struct MotivatorBase.Challenge storage ref)"
                               }
                             },
-                            "id": 160,
+                            "id": 2245,
                             "indexExpression": {
-                              "id": 159,
+                              "id": 2244,
                               "name": "_challengeId",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 139,
-                              "src": "1376:12:2",
+                              "referencedDeclaration": 2224,
+                              "src": "1417:12:12",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_string_calldata_ptr",
                                 "typeString": "string calldata"
@@ -2877,21 +3036,21 @@
                             "isPure": false,
                             "lValueRequested": false,
                             "nodeType": "IndexAccess",
-                            "src": "1365:24:2",
+                            "src": "1406:24:12",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_Challenge_$84_storage",
+                              "typeIdentifier": "t_struct$_Challenge_$2169_storage",
                               "typeString": "struct MotivatorBase.Challenge storage ref"
                             }
                           },
-                          "id": 161,
+                          "id": 2246,
                           "isConstant": false,
                           "isLValue": true,
                           "isPure": false,
                           "lValueRequested": false,
                           "memberName": "time",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 79,
-                          "src": "1365:29:2",
+                          "referencedDeclaration": 2164,
+                          "src": "1406:29:12",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -2901,21 +3060,21 @@
                         "operator": "!=",
                         "rightExpression": {
                           "hexValue": "30",
-                          "id": 162,
+                          "id": 2247,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "kind": "number",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "1398:1:2",
+                          "src": "1439:1:12",
                           "typeDescriptions": {
                             "typeIdentifier": "t_rational_0_by_1",
                             "typeString": "int_const 0"
                           },
                           "value": "0"
                         },
-                        "src": "1365:34:2",
+                        "src": "1406:34:12",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -2923,14 +3082,14 @@
                       },
                       {
                         "hexValue": "4368616c6c656e6765496420616c726561647920757365642e",
-                        "id": 164,
+                        "id": 2249,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "1401:27:2",
+                        "src": "1442:27:12",
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_a7b591f54c8b3ba392ec635056c990d9fbf041fd18316e2e003c4f271c2762fb",
                           "typeString": "literal_string \"ChallengeId already used.\""
@@ -2949,7 +3108,7 @@
                           "typeString": "literal_string \"ChallengeId already used.\""
                         }
                       ],
-                      "id": 157,
+                      "id": 2242,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -2957,13 +3116,13 @@
                         4294967278
                       ],
                       "referencedDeclaration": 4294967278,
-                      "src": "1357:7:2",
+                      "src": "1398:7:12",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 165,
+                    "id": 2250,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2971,103 +3130,103 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1357:72:2",
+                    "src": "1398:72:12",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 166,
+                  "id": 2251,
                   "nodeType": "ExpressionStatement",
-                  "src": "1357:72:2"
+                  "src": "1398:72:12"
                 },
                 {
                   "assignments": [
-                    169
+                    2254
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 169,
+                      "id": 2254,
                       "mutability": "mutable",
                       "name": "c",
-                      "nameLocation": "1456:1:2",
+                      "nameLocation": "1497:1:12",
                       "nodeType": "VariableDeclaration",
-                      "scope": 196,
-                      "src": "1439:18:2",
+                      "scope": 2281,
+                      "src": "1480:18:12",
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Challenge_$84_memory_ptr",
+                        "typeIdentifier": "t_struct$_Challenge_$2169_memory_ptr",
                         "typeString": "struct MotivatorBase.Challenge"
                       },
                       "typeName": {
-                        "id": 168,
+                        "id": 2253,
                         "nodeType": "UserDefinedTypeName",
                         "pathNode": {
-                          "id": 167,
+                          "id": 2252,
                           "name": "Challenge",
                           "nodeType": "IdentifierPath",
-                          "referencedDeclaration": 84,
-                          "src": "1439:9:2"
+                          "referencedDeclaration": 2169,
+                          "src": "1480:9:12"
                         },
-                        "referencedDeclaration": 84,
-                        "src": "1439:9:2",
+                        "referencedDeclaration": 2169,
+                        "src": "1480:9:12",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Challenge_$84_storage_ptr",
+                          "typeIdentifier": "t_struct$_Challenge_$2169_storage_ptr",
                           "typeString": "struct MotivatorBase.Challenge"
                         }
                       },
                       "visibility": "internal"
                     }
                   ],
-                  "id": 179,
+                  "id": 2264,
                   "initialValue": {
                     "arguments": [
                       {
-                        "id": 171,
+                        "id": 2256,
                         "name": "_userId",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 131,
-                        "src": "1470:7:2",
+                        "referencedDeclaration": 2216,
+                        "src": "1511:7:12",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_calldata_ptr",
                           "typeString": "string calldata"
                         }
                       },
                       {
-                        "id": 172,
+                        "id": 2257,
                         "name": "_gameId",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 133,
-                        "src": "1479:7:2",
+                        "referencedDeclaration": 2218,
+                        "src": "1520:7:12",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_calldata_ptr",
                           "typeString": "string calldata"
                         }
                       },
                       {
-                        "id": 173,
+                        "id": 2258,
                         "name": "_levelId",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 135,
-                        "src": "1488:8:2",
+                        "referencedDeclaration": 2220,
+                        "src": "1529:8:12",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_calldata_ptr",
                           "typeString": "string calldata"
                         }
                       },
                       {
-                        "id": 174,
+                        "id": 2259,
                         "name": "_time",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 137,
-                        "src": "1498:5:2",
+                        "referencedDeclaration": 2222,
+                        "src": "1539:5:12",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -3075,25 +3234,25 @@
                       },
                       {
                         "expression": {
-                          "id": 175,
+                          "id": 2260,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 4294967281,
-                          "src": "1505:3:2",
+                          "src": "1546:3:12",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
                           }
                         },
-                        "id": 176,
+                        "id": 2261,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "value",
                         "nodeType": "MemberAccess",
-                        "src": "1505:9:2",
+                        "src": "1546:9:12",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -3101,14 +3260,14 @@
                       },
                       {
                         "hexValue": "66616c7365",
-                        "id": 177,
+                        "id": 2262,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "bool",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "1516:5:2",
+                        "src": "1557:5:12",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -3143,18 +3302,18 @@
                           "typeString": "bool"
                         }
                       ],
-                      "id": 170,
+                      "id": 2255,
                       "name": "Challenge",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 84,
-                      "src": "1460:9:2",
+                      "referencedDeclaration": 2169,
+                      "src": "1501:9:12",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_type$_t_struct$_Challenge_$84_storage_ptr_$",
+                        "typeIdentifier": "t_type$_t_struct$_Challenge_$2169_storage_ptr_$",
                         "typeString": "type(struct MotivatorBase.Challenge storage pointer)"
                       }
                     },
-                    "id": 178,
+                    "id": 2263,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3162,44 +3321,44 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1460:62:2",
+                    "src": "1501:62:12",
                     "tryCall": false,
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Challenge_$84_memory_ptr",
+                      "typeIdentifier": "t_struct$_Challenge_$2169_memory_ptr",
                       "typeString": "struct MotivatorBase.Challenge memory"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "1439:83:2"
+                  "src": "1480:83:12"
                 },
                 {
                   "expression": {
-                    "id": 184,
+                    "id": 2269,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "baseExpression": {
-                        "id": 180,
+                        "id": 2265,
                         "name": "challenges",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 103,
-                        "src": "1532:10:2",
+                        "referencedDeclaration": 2188,
+                        "src": "1573:10:12",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Challenge_$84_storage_$",
+                          "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Challenge_$2169_storage_$",
                           "typeString": "mapping(string memory => struct MotivatorBase.Challenge storage ref)"
                         }
                       },
-                      "id": 182,
+                      "id": 2267,
                       "indexExpression": {
-                        "id": 181,
+                        "id": 2266,
                         "name": "_challengeId",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 139,
-                        "src": "1543:12:2",
+                        "referencedDeclaration": 2224,
+                        "src": "1584:12:12",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_calldata_ptr",
                           "typeString": "string calldata"
@@ -3210,94 +3369,94 @@
                       "isPure": false,
                       "lValueRequested": true,
                       "nodeType": "IndexAccess",
-                      "src": "1532:24:2",
+                      "src": "1573:24:12",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Challenge_$84_storage",
+                        "typeIdentifier": "t_struct$_Challenge_$2169_storage",
                         "typeString": "struct MotivatorBase.Challenge storage ref"
                       }
                     },
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
-                      "id": 183,
+                      "id": 2268,
                       "name": "c",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 169,
-                      "src": "1559:1:2",
+                      "referencedDeclaration": 2254,
+                      "src": "1600:1:12",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Challenge_$84_memory_ptr",
+                        "typeIdentifier": "t_struct$_Challenge_$2169_memory_ptr",
                         "typeString": "struct MotivatorBase.Challenge memory"
                       }
                     },
-                    "src": "1532:28:2",
+                    "src": "1573:28:12",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Challenge_$84_storage",
+                      "typeIdentifier": "t_struct$_Challenge_$2169_storage",
                       "typeString": "struct MotivatorBase.Challenge storage ref"
                     }
                   },
-                  "id": 185,
+                  "id": 2270,
                   "nodeType": "ExpressionStatement",
-                  "src": "1532:28:2"
+                  "src": "1573:28:12"
                 },
                 {
                   "eventCall": {
                     "arguments": [
                       {
-                        "id": 187,
+                        "id": 2272,
                         "name": "_challengeId",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 139,
-                        "src": "1591:12:2",
+                        "referencedDeclaration": 2224,
+                        "src": "1632:12:12",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_calldata_ptr",
                           "typeString": "string calldata"
                         }
                       },
                       {
-                        "id": 188,
+                        "id": 2273,
                         "name": "_userId",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 131,
-                        "src": "1605:7:2",
+                        "referencedDeclaration": 2216,
+                        "src": "1646:7:12",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_calldata_ptr",
                           "typeString": "string calldata"
                         }
                       },
                       {
-                        "id": 189,
+                        "id": 2274,
                         "name": "_gameId",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 133,
-                        "src": "1614:7:2",
+                        "referencedDeclaration": 2218,
+                        "src": "1655:7:12",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_calldata_ptr",
                           "typeString": "string calldata"
                         }
                       },
                       {
-                        "id": 190,
+                        "id": 2275,
                         "name": "_levelId",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 135,
-                        "src": "1623:8:2",
+                        "referencedDeclaration": 2220,
+                        "src": "1664:8:12",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_calldata_ptr",
                           "typeString": "string calldata"
                         }
                       },
                       {
-                        "id": 191,
+                        "id": 2276,
                         "name": "_time",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 137,
-                        "src": "1633:5:2",
+                        "referencedDeclaration": 2222,
+                        "src": "1674:5:12",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -3305,25 +3464,25 @@
                       },
                       {
                         "expression": {
-                          "id": 192,
+                          "id": 2277,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 4294967281,
-                          "src": "1640:3:2",
+                          "src": "1681:3:12",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
                           }
                         },
-                        "id": 193,
+                        "id": 2278,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "value",
                         "nodeType": "MemberAccess",
-                        "src": "1640:9:2",
+                        "src": "1681:9:12",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -3357,18 +3516,18 @@
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 186,
+                      "id": 2271,
                       "name": "ChallengePlaced",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 98,
-                      "src": "1575:15:2",
+                      "referencedDeclaration": 2183,
+                      "src": "1616:15:12",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_uint256_$_t_uint256_$returns$__$",
                         "typeString": "function (string memory,string memory,string memory,string memory,uint256,uint256)"
                       }
                     },
-                    "id": 194,
+                    "id": 2279,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3376,40 +3535,40 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1575:75:2",
+                    "src": "1616:75:12",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 195,
+                  "id": 2280,
                   "nodeType": "EmitStatement",
-                  "src": "1570:80:2"
+                  "src": "1611:80:12"
                 }
               ]
             },
             "functionSelector": "9d84184e",
-            "id": 197,
+            "id": 2282,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "place_challenge",
-            "nameLocation": "977:15:2",
+            "nameLocation": "1018:15:12",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 140,
+              "id": 2225,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 131,
+                  "id": 2216,
                   "mutability": "mutable",
                   "name": "_userId",
-                  "nameLocation": "1009:7:2",
+                  "nameLocation": "1050:7:12",
                   "nodeType": "VariableDeclaration",
-                  "scope": 197,
-                  "src": "993:23:2",
+                  "scope": 2282,
+                  "src": "1034:23:12",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -3417,10 +3576,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 130,
+                    "id": 2215,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "993:6:2",
+                    "src": "1034:6:12",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -3430,13 +3589,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 133,
+                  "id": 2218,
                   "mutability": "mutable",
                   "name": "_gameId",
-                  "nameLocation": "1034:7:2",
+                  "nameLocation": "1075:7:12",
                   "nodeType": "VariableDeclaration",
-                  "scope": 197,
-                  "src": "1018:23:2",
+                  "scope": 2282,
+                  "src": "1059:23:12",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -3444,10 +3603,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 132,
+                    "id": 2217,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1018:6:2",
+                    "src": "1059:6:12",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -3457,13 +3616,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 135,
+                  "id": 2220,
                   "mutability": "mutable",
                   "name": "_levelId",
-                  "nameLocation": "1059:8:2",
+                  "nameLocation": "1100:8:12",
                   "nodeType": "VariableDeclaration",
-                  "scope": 197,
-                  "src": "1043:24:2",
+                  "scope": 2282,
+                  "src": "1084:24:12",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -3471,10 +3630,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 134,
+                    "id": 2219,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1043:6:2",
+                    "src": "1084:6:12",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -3484,13 +3643,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 137,
+                  "id": 2222,
                   "mutability": "mutable",
                   "name": "_time",
-                  "nameLocation": "1103:5:2",
+                  "nameLocation": "1144:5:12",
                   "nodeType": "VariableDeclaration",
-                  "scope": 197,
-                  "src": "1098:10:2",
+                  "scope": 2282,
+                  "src": "1139:10:12",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3498,10 +3657,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 136,
+                    "id": 2221,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1098:4:2",
+                    "src": "1139:4:12",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -3511,13 +3670,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 139,
+                  "id": 2224,
                   "mutability": "mutable",
                   "name": "_challengeId",
-                  "nameLocation": "1126:12:2",
+                  "nameLocation": "1167:12:12",
                   "nodeType": "VariableDeclaration",
-                  "scope": 197,
-                  "src": "1110:28:2",
+                  "scope": 2282,
+                  "src": "1151:28:12",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -3525,10 +3684,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 138,
+                    "id": 2223,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1110:6:2",
+                    "src": "1151:6:12",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -3537,38 +3696,92 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "992:147:2"
+              "src": "1033:147:12"
             },
             "returnParameters": {
-              "id": 141,
+              "id": 2226,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1164:0:2"
+              "src": "1205:0:12"
             },
-            "scope": 198,
-            "src": "968:689:2",
+            "scope": 2289,
+            "src": "1009:689:12",
             "stateMutability": "payable",
             "virtual": true,
             "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 2287,
+              "nodeType": "Block",
+              "src": "1763:8:12",
+              "statements": []
+            },
+            "functionSelector": "fcad79a3",
+            "id": 2288,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "id": 2285,
+                "kind": "modifierInvocation",
+                "modifierName": {
+                  "id": 2284,
+                  "name": "onlyOwner",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 2333,
+                  "src": "1753:9:12"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1753:9:12"
+              }
+            ],
+            "name": "return_funds_and_destroy",
+            "nameLocation": "1717:24:12",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2283,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1741:2:12"
+            },
+            "returnParameters": {
+              "id": 2286,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1763:0:12"
+            },
+            "scope": 2289,
+            "src": "1708:63:12",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
           }
         ],
-        "scope": 199,
-        "src": "263:1397:2",
+        "scope": 2290,
+        "src": "287:1486:12",
         "usedErrors": []
       }
     ],
-    "src": "36:1624:2"
+    "src": "36:1737:12"
   },
   "compiler": {
     "name": "solc",
-    "version": "0.8.7+commit.e28d00a7.Emscripten.clang"
+    "version": "0.8.10+commit.fc410830.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.3.3",
-  "updatedAt": "2021-11-16T17:14:17.874Z",
+  "schemaVersion": "3.4.3",
+  "updatedAt": "2021-11-25T10:00:57.021Z",
   "devdoc": {
     "kind": "dev",
-    "methods": {},
+    "methods": {
+      "owner()": {
+        "details": "Returns the address of the current owner."
+      },
+      "transferOwnership(address)": {
+        "details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+      }
+    },
     "version": 1
   },
   "userdoc": {

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const claim_prize = () => {
+const Claim_prize = () => {
     return (
         <div>
             <h1>Claim a prize</h1>
@@ -8,4 +8,4 @@ const claim_prize = () => {
     )
 }
 
-export default claim_prize
+export default Claim_prize

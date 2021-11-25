@@ -1,7 +1,7 @@
-# Spped the speedrunners!
-## Motivation
+# Speed the speedrunners!
+## Motivation in a nutshell
 
-The project starts from the idea of how gamers that engage in **speedrunning** (competing for passing games or levels as quick or effectively as possible) could be motivated with rewards in crypto that would be automatically distributed using smart contracts. 
+The project starts from the idea of how gamers that engage in **speedrunning** (competing in passing games or levels as quick or effectively as possible) could be motivated with rewards in crypto that would be automatically distributed using smart contracts. 
 
 Typically, somebody would post a challenge (e.g. passing some game level in less than X minutes) for a particular gamer in the blockchain sending some crypto as reward, and that reward may be claimed when the challenge is eventually beat by the user. 
 
@@ -20,6 +20,8 @@ The main folder contains the [truffle](https://trufflesuite.com/)-generated stru
 
 ## Access the prototype frontend
 The frontend of the prototype is deployed at [this address]().
+
+A screencast with a short walkthrough [can be found here]().
 
 ## Deployment and tests
 

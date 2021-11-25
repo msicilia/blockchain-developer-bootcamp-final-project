@@ -1,0 +1,45 @@
+/'
+comment
+'/
+
+@startuml
+
+package chainlink <<Rectangle>>{
+}
+
+package speedrun_repos <<Rectangle>> {
+interface ISpeedRunRepo{
+  }
+class SpeedRunRepoStub{
+}
+class SpeedRunRepoOraclized{
+  }
+}
+
+ISpeedRunRepo <|-- SpeedRunRepoStub
+ISpeedRunRepo <|-- SpeedRunRepoOraclized
+
+
+package base_motivator_contracts <<Rectangle>>{
+interface Ownable {
+owner()
+transferOwnership()
+}
+
+abstract class MotivatorBase{
+place_challenge()
+{abstract} reclaim_prize()
+return_funds_and_destroy()
+  }
+}
+Ownable <|-- MotivatorBase
+
+package some_simple_impl <<Rectangle>> {
+  class StraightforwardMotivator{
+    reclaim_prize()
+  }
+}
+StraightforwardMotivator --|> MotivatorBase
+MotivatorBase --> ISpeedRunRepo
+
+@enduml

@@ -1,16 +1,34 @@
 import { useContract } from './useContract';
 import SP_REPO_ABI from '../contracts/SpeedRunRepo_Stub.json';
-// import useIsValidNetwork from '../hooks/useIsValidNetwork';
+import useIsValidNetwork from '../hooks/useIsValidNetwork';
 import { useWeb3React } from '@web3-react/core';
+import { isAddress } from '@ethersproject/address'; 
 // import { useAppContext } from '../AppContext';
-import { formatUnits, parseEther } from '@ethersproject/units';
-import { useEffect } from 'react';
+//import { formatUnits, parseEther } from '@ethersproject/units';
+//import { useEffect } from 'react';
+
+const contractAddress = (chainId) => {
+    switch (chainId){
+      case 4: // rinkeby
+         return "0xA2d91BBB7ddbDfD4f93bfF0262542f6C22fC0806";
+      case 42: // ropsten
+        return "not defined";
+      case 5577: // local ganache
+        return "local ganache";
+    }
+}
 
 export const useSpeedRunRepoContract = () => {
-  const { account } = useWeb3React();
-  // const { isValidNetwork } = useIsValidNetwork();
-  const spRepoContractAddress = '0x1071737962A9723F2369e5A2B5e2ddEa0b94d2dB'; // ganache
-  const spRepoContract = useContract(spRepoContractAddress, SP_REPO_ABI);
+  const {chainId } = useWeb3React();
+  const { isValidNetwork } = useIsValidNetwork();
+
+  const spRepoContractAddress = contractAddress(chainId);
+  if (isValidNetwork){
+    console.log(spRepoContractAddress);
+    const spRepoContract = useContract(spRepoContractAddress, SP_REPO_ABI);
+  }else{
+    //alert("Metamask is not connected to a valid network");
+  }
   // const { setCTokenBalance, setExchangeRate, setTxnStatus, cTokenBalance, exchangeRate } = useAppContext();
 
   //const fetchCTokenBalance = async () => {
@@ -30,13 +48,13 @@ export const useSpeedRunRepoContract = () => {
 
   
   const add_runner = async (userName, userId, addr) => {
-    //if (account /* && isValidNetwork*/) {
-    try {
+    if (isValidNetwork) {
+      try {
         console.log("sending transaction");
         //setTxnStatus('LOADING');
         const txn = await spRepoContract.add_runner(
           userName,
-           userId,
+          userId,
           addr
         );
         await txn.wait(1);
@@ -46,8 +64,28 @@ export const useSpeedRunRepoContract = () => {
         console.log(error);
         //setTxnStatus('ERROR');
     }
-    //}
+  }else{
+    alert("Metamask is not connected to a valid network");
+  }
   };
+  const fetch_runner = async (userId) => {
+    if (isValidNetwork) {
+    try {
+      //setTxnStatus('LOADING');
+      const result = await spRepoContract.runners(
+        userId
+      );
+      return result;
+      //const result = await txn.wait(1);
+      //setTxnStatus('COMPLETE');
+    } catch (error) {
+      console.log(error);
+      //setTxnStatus('ERROR');
+  }
+}else{
+  alert("Metamask is not connected to a valid network");
+}
+  }
 /* 
   useEffect(() => {
     if (account) {
@@ -57,14 +95,7 @@ export const useSpeedRunRepoContract = () => {
 */
    return {
       add_runner,
+      fetch_runner
   };
-  /*
-  return {
-    cTokenBalance,
-    exchangeRate,
-    getCTokenExchangeRate,
-    fetchCTokenBalance,
-    deposit,
-  };
-  */
+
 };

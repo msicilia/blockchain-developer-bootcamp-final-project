@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-3.0
-pragma solidity ^0.8.7;
+pragma solidity ^0.8.10;
 /// @title A repository of data from Speedrun.com
 /// @author msicilia.eth
 /// @notice This interface defines the data structures and the interface of data repos for SpeedRun.com.
@@ -22,6 +22,14 @@ interface ISpeedRunRepo{
         uint primaryTime;
         string userId;
     }
+    /// @param _userName The name of the SpeedRun.com user
+    /// @param _userId The SpeedRunner id of the user.
+    /// @param _addr An address associated to the user.
+    function add_runner(string calldata _userName, string calldata _userId, address _addr) external;
+
+    ///
+    function add_run(string calldata _userId, string calldata _gameId, string calldata _levelId, uint mark) external;
+
     /// @param userId The SppedRum.com `userId` being queried.
     /// @param gameId The id of the game.
     /// @param levelId The id of the level of the game.

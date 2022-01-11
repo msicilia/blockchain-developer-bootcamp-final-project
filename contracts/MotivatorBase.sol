@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-3.0
-pragma solidity ^0.8.10;
+pragma solidity ^0.8.9;
 /// @title A motivating mechanism for speedrunners.
 /// @author msicilia.eth
 /// @notice This interface defines the basic interface for a variety of possible mechanisms.
@@ -15,6 +15,7 @@ abstract contract MotivatorBase is Ownable{
         uint time;
         uint prize; 
         bool reclaimed;
+        address sender;
     }
     event ChallengePlaced(
         string challengeId,
@@ -40,7 +41,7 @@ abstract contract MotivatorBase is Ownable{
         require(msg.value > 0, "Challenges need to provide funds for rewarding speedrunners");
         require(_time > 0, "The time of the challenge needs to be greater than zero.");
         require(challenges[_challengeId].time != 0, "ChallengeId already used.");
-        Challenge memory c = Challenge(_userId, _gameId, _levelId, _time, msg.value, false);
+        Challenge memory c = Challenge(_userId, _gameId, _levelId, _time, msg.value, false, msg.sender);
         challenges[_challengeId] = c;
         emit ChallengePlaced(_challengeId, _userId, _gameId, _levelId, _time, msg.value);
     }

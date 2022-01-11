@@ -3,7 +3,7 @@
 
 ### Solidity version
 
-I have used the latest Solidity compiler version available (`8.10`) at the time of development and fixed it in smart contract code and in the configuration of Truffle.
+I have used the latest Solidity compiler version available and workable (`0.8.9`) at the time of development and fixed it in smart contract code and in the configuration of Truffle. I could not use the later versions `0.8.10` and `0.8.11` due to some problems with Truffle that I was unable to solve (seem to be related to this issue: https://github.com/ethereum/solidity/issues/11489).
 
 This is a recommendation from the Solidity docs as only the latest version receives security fixes. This is also recommended in [SWC-102](https://swcregistry.io/docs/SWC-102) *"outdated compiler version"* and [SWC-103](https://swcregistry.io/docs/SWC-103) *"floating pragma"* .
 

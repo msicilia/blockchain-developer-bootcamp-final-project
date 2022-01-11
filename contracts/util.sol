@@ -1,4 +1,5 @@
-pragma solidity ^0.8.10;
+// SPDX-License-Identifier: GPL-3.0
+pragma solidity ^0.8.9;
 
 library util {
     // Takes bytes in the form:
@@ -8,4 +9,5 @@ library util {
           bytes20 aux;
           return address(aux);
     }
+
 }

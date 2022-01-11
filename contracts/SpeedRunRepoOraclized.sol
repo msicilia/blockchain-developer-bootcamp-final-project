@@ -1,5 +1,5 @@
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.10;
+// SPDX-License-Identifier: GPL-3.0
+pragma solidity ^0.8.9;
 
 import "@chainlink/contracts/src/v0.8/ChainlinkClient.sol";
 import "./ISpeedRunRepo.sol";
@@ -31,17 +31,17 @@ contract SpeedRunRepoOraclized is ChainlinkClient, ISpeedRunRepo {
         setPublicChainlinkToken();
     }
     
-    function passed_mark(string calldata userId, string calldata gameId, string calldata levelId, uint mark) override external view returns (bool){
+    function passed_mark(string calldata userId, string calldata gameId, string calldata levelId,  uint mark) override external view returns (bool){
         return true;
     }
 
-    function add_runner(string calldata _userName, string calldata _userId, address _addr) external{
+    function add_runner(string calldata _userName, string calldata _userId, address _addr) override external{
          bytes32 reqId = _requestAddress(_userId);
-         runner_requests[reqId] = SpeedRunner(_userName, _userId, address(0));
+         runner_requests[reqId] = SpeedRunner(true, _userName, _userId, address(0));
     }
 
     ///
-    function add_run(string calldata _userId, string calldata _gameId, string calldata _levelId, uint mark) external{}
+    function add_run(string calldata _userId, string calldata _gameId, string calldata _levelId,string calldata runId, uint mark) override external{}
 
     /**
      * Create a Chainlink request to retrieve API response, find the target

@@ -2,7 +2,7 @@
 // OpenZeppelin Contracts v4.3.2 (access/Ownable.sol)
 // Stolen and adapted by msicilia
 
-pragma solidity ^0.8.10;
+pragma solidity ^0.8.9;
 
 // OpenZeppelin Context not required here as this is not a library-like contract
 // import "../utils/Context.sol";

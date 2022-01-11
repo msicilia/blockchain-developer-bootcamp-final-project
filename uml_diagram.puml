@@ -5,11 +5,16 @@ comment
 @startuml
 
 package chainlink <<Rectangle>>{
+  class ChainLinkClient{}
 }
 
 package speedrun_repos <<Rectangle>> {
 interface ISpeedRunRepo{
+  add_runner()
+  add_run()
+  passed_mark()
   }
+  
 class SpeedRunRepoStub{
 }
 class SpeedRunRepoOraclized{
@@ -41,5 +46,6 @@ package some_simple_impl <<Rectangle>> {
 }
 StraightforwardMotivator --|> MotivatorBase
 MotivatorBase --> ISpeedRunRepo
+ChainLinkClient <|-- SpeedRunRepoOraclized
 
 @enduml

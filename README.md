@@ -25,7 +25,7 @@ The main folder contains the [truffle](https://trufflesuite.com/)-generated stru
 ## Access the prototype frontend
 The frontend of the prototype is deployed at [this address](https://blockchain-developer-bootcamp-final-project-one.vercel.app/).
 
-A screencast with a short walkthrough [can be found here](https://youtu.be/ASYqWMS14BU).
+A screencast with a short walkthrough [can be found here](https://www.youtube.com/watch?v=hf6K5hvZLS0).
 
 ## Deployment and tests
 

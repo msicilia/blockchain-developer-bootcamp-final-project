@@ -11,12 +11,12 @@ const about = () => {
             In a nutshell, this works as follows:
             <ul>
             <li>
-                Speedrunners can register themselves (or being registered by others) at the <b>"register player"</b> menu item. This just stores in the corresponding smart contract an Ethereum address associated to a speedrun.com user name and id.
+                Speedrunners can register themselves (or being registered by others) at the <b>&ldquo;register player&ldquo;</b> menu item. This just stores in the corresponding smart contract an Ethereum address associated to a speedrun.com user name and id.
             </li>
-            <li>Then, somebody may <b>"place a challenge"</b>, locking some Ether into a smart contract, 
+            <li>Then, somebody may <b>&ldquo;place a challenge&ldquo;</b>, locking some Ether into a smart contract, 
             as a motivation for some player to beat a given time speedrunning for some game.</li>
-            <li>Eventually, somebody will <b>"record a speedrun"</b> that can be matched against some of the challenges.</li>
-            <li>Finally, you can <b>"claim a prize"</b> for a challenge for yourself of for other
+            <li>Eventually, somebody will <b>&ldquo;record a speedrun&ldquo;</b> that can be matched against some of the challenges.</li>
+            <li>Finally, you can <b>&ldquo;claim a prize&ldquo;</b> for a challenge for yourself of for other
                 speedrunner.
             </li>
             </ul>

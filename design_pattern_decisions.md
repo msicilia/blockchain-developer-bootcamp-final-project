@@ -25,6 +25,9 @@ As a more realistic implementtion, the `SpeedRunRepoOraclized` contract brings t
 
 A slightly modified version of OppenZeppelin `Ownable` contract has been applied to the motivator contracts, for a sort of emergency stop mechanism. More information included in the [section on avoiding attack patterns](avoiding_common_attacks.md).
 
+## Pausable contract
+
+A modified version of OpenZeppelin `Pausable` contract has been applied to the motivator contracts to support the permanent disabling of a motivator, returning the pending prizes to their original issues. Once a motivator contract is paused, its significant behaviors are disabled, and this is a better solution than `selfdestruct` which may make lose of funds sent to the disabled contract. When returning the funds, the transfers are done after the updating of the status of the challenges, following the known pattern of "Checks-Effects-Interactions" that is used to attempt to mitigate attack vectors as those used in reentrancy attacks. 
 ## About strings
 
 I have used `string` as data type for user names and user ids since I was unable to find in the SpeedRun.com API docs the maximum length of those elements. 

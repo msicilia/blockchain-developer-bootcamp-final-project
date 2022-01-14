@@ -44,6 +44,9 @@ contract("SpeedRunRepo_Stub", (accounts) => {
         try{
             await inst.add_run(_id, _gameid, _levelid, _runid, _mark);
         }catch(error){ // It is expected the error will be catched here.
+            return;
         }    
+        assert.fail("A revert was expected when adding a run to a runner not yet registered.");
+
     });
     })

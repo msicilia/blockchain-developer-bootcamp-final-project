@@ -3,25 +3,22 @@ import { useRef, useState } from "react";
 import { Contract } from '@ethersproject/contracts'
 import {  useEthers } from '@usedapp/core'
 import { utils } from 'ethers'
-import repoABI from '../contracts/StraightForwardMotivator.json';
+import repoABI from '../contracts/SpeedRunRepo_Stub.json';
+import { speedRunRepoAddress } from '../contract_addresses.json'
 import {  useContractFunction } from '@usedapp/core'
-import { straightForwardMotivatorAddress } from '../contract_addresses.json'
 
-export default function Home() {
+export default function Register_play() {
   const [inputs, setInputs] = useState({});
   const get_player = useRef(null);
   const get_game = useRef(null);
   const get_level = useRef(null);
   const get_challenge = useRef(null);
-  const get_reward= useRef(null);
-  const { active } = useEthers()
+  const { active } = useEthers();
 
-  // console.log(straightForwardMotivatorAddress);
-  //console.log(repoABI);
 
-  const straightForwardMotivatorAbi = new utils.Interface(repoABI.abi);
-  const contract = new Contract(straightForwardMotivatorAddress, straightForwardMotivatorAbi);
-  const { state, send } = useContractFunction(contract, 'place_challenge', { transactionName: 'New Challenge' });
+  const speedRunRepoAbi = new utils.Interface(repoABI.abi);
+  const contract = new Contract(speedRunRepoAddress, speedRunRepoAbi);
+  const { state, send } = useContractFunction(contract, 'add_run', { transactionName: 'New run achievement' });
 
 
   const handleChange = (event) => {
@@ -48,13 +45,13 @@ export default function Home() {
       return;
     }
     if (active){
-        const amount = utils.parseEther(get_reward.current.value);
         const id = get_player.current.value;
         const gameid = get_game.current.value;
         const levelid = get_level.current.value;
         const mark = get_challenge.current.value;
-        console.log(amount.toString());
-        send(id, gameid, levelid, mark, { value: amount })
+        console.log(id, gameid, levelid, mark);
+        // TODO: include runid
+        send(id, gameid, levelid, 'some run id', mark);
     }else{
       alert("Please connect to Kovan with Metamask");
     }
@@ -62,7 +59,7 @@ export default function Home() {
 
   return (
     <div>
-      <h1>Motivate a speedrunner</h1>
+      <h1>Register a speedrun</h1>
       <form onSubmit={handleSubmit}>
        <label>Speedrunner id: <input type="text" 
                                 ref={get_player}
@@ -85,20 +82,13 @@ export default function Home() {
                                 value={inputs.levelname || ""}
                                 onChange={handleChange}
                                 placeholder="level id for the game (may be blank)"/> </label>
-       <label>Time challenge (seconds): <input type="number" min="1"
+       <label>Time achieved (seconds): <input type="number" min="1"
                                 ref={get_challenge}
                                 name="timerecord" 
                                 className="formInput"
                                 value={inputs.timerecord || ""}
                                 onChange={handleChange}
-                                placeholder="time you want the runner to hit (secs.)"/> </label>
-       <label>Amount (ether): <input type="number" min="0" step="0.01"
-                                ref={get_reward}
-                                name="amount" 
-                                className="formInput"
-                                value={inputs.amount || ""}
-                                onChange={handleChange}
-                                placeholder="reward you pay to motivate the runner (ether)"/> </label>
+                                placeholder="time the runner achieved (secs.)"/> </label>
        <input type="submit" className="submitButton" value="SEND"/>
       </form>
 

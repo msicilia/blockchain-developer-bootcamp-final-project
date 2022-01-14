@@ -10,11 +10,13 @@ export function useContract(contractAddress, ABI) {
   if (contractAddress === AddressZero) {
     throw Error(`Invalid 'contractAddress' parameter '${contractAddress}'.`);
   }
- 
+  console.log(ABI);
+
   const { library, account } = useWeb3React();
+
   const signerOrProvider = account ? library.getSigner(account).connectUnchecked() : library;
 
   return useMemo(() => {
-    return new Contract(contractAddress, ABI.abi, signerOrProvider);
-  }, [contractAddress, ABI.abi, signerOrProvider]);
+    return new Contract(contractAddress, ABI, signerOrProvider);
+  }, [contractAddress, ABI, signerOrProvider]);
 }

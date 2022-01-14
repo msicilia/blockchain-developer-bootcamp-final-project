@@ -9,11 +9,13 @@ import "./MotivatorBase.sol";
 contract StraightForwardMotivator is MotivatorBase{
     constructor(address _speedRunRepo) MotivatorBase(_speedRunRepo) {}
 
-    function reclaim_prize(string calldata _challengeId) external override {
-        require(challenges[_challengeId].time != 0, "ChallengeId not found.");
-        Challenge memory ch = challenges[_challengeId];
-        if (repo.passed_mark(ch.userId, ch.gameId, ch.levelId, ch.time)){
-            // repo.getUserAddress(ch.userId);  ... and send the money
-        }
+    function reclaim_prize(uint _challengeId) whenNotPaused() external override {
+        require(challenges[_challengeId].time != 0, "ChallengeId not found when reclaiming prize.");
+        Challenge storage ch = challenges[_challengeId];
+        require(!ch.reclaimed, "The challenge has already been reclaimed.");
+        require(repo.passed_mark(ch.userId, ch.gameId, ch.levelId, ch.time));
+        ch.reclaimed = true;
+        address addr = repo.get_runner_address(ch.userId);
+        payable(addr).transfer(ch.prize);
     }
 }

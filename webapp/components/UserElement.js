@@ -1,17 +1,24 @@
-import React from 'react'
 import { useState, useRef, useEffect } from 'react';
-import { useSpeedRunRepoContract } from '../hooks/useSpeedRunRepoContract.js';
 import { isAddress } from '@ethersproject/address'; 
-import { useWeb3React } from "@web3-react/core"
+import { useContractFunction } from '@usedapp/core'
+import repoABI from '../contracts/SpeedRunRepo_Stub.json';
+import { speedRunRepoAddress } from '../contract_addresses.json'
+import { Contract as ContractEthers} from '@ethersproject/contracts'
+import Web3 from 'web3';
+import { utils, getDefaultProvider } from 'ethers'
+
+// import { useSpeedRunRepoContract } from '../hooks/useSpeedRunRepoContract.js';
 
 
-const UserElement = ({name, id}) => {
-    const { chainId } = useWeb3React()
+const UserElement =  ({name, id}) => {
     const [getClicked, setClicked] = useState(false);
     const [getAddress, setAddress] = useState("");
-    const { add_runner, fetch_runner } = useSpeedRunRepoContract();
     const get_address = useRef(null);
-
+    const web3 = new Web3(Web3.givenProvider);
+    const speedRunRepoAbi = new utils.Interface(repoABI.abi);
+    const contract_eths = new ContractEthers(speedRunRepoAddress, speedRunRepoAbi);
+    const contract = new web3.eth.Contract(repoABI.abi, speedRunRepoAddress );
+    const { state, send} = useContractFunction(contract_eths, 'add_runner', { transactionName: `Adding runner address` });
 
     // effect runs on component mount
     useEffect(async () => {
@@ -25,19 +32,18 @@ const UserElement = ({name, id}) => {
     }
     
      const display_runner_address = async () =>{
-            // check if the user is yet registered.
-            const result = await fetch_runner(id);
-            // Third element of the SpeedRunner struct.
-            if (result)
-                get_address.current.value = result[2];
+        // check if the user is yet registered.
+        // Third element of the SpeedRunner struct.   
+      const runner = await contract.methods.runners(id).call();
+      if (runner)
+            get_address.current.value = runner[3];
     }
+
     const sendAddRunnerTx = async () => {
           const address =  get_address.current.value;
           // check if the address is a valid Ethereum address
           if (isAddress(address)){
-              console.log(name, id, address);
-            await add_runner(name, id, address);
-            await display_runner_address();
+              await send(name, id, address);
           }
     }
 
@@ -49,10 +55,9 @@ const UserElement = ({name, id}) => {
                 <span/>
                 : 
                 <span>
-                <input className="userElementInput" ref={get_address}/>
+                <input className="userElementInput" ref={get_address} />
                 <button onClick={sendAddRunnerTx}>update</button>
                 </span>
-
             }
             </p>
         </div>

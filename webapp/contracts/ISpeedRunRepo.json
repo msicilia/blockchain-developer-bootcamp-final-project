@@ -90,9 +90,28 @@
       ],
       "stateMutability": "view",
       "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "userId",
+          "type": "string"
+        }
+      ],
+      "name": "get_runner_address",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.8.9+commit.e5eed63a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_userId\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_gameId\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_levelId\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_runId\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"mark\",\"type\":\"uint256\"}],\"name\":\"add_run\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_userName\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_userId\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"_addr\",\"type\":\"address\"}],\"name\":\"add_runner\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"userId\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"gameId\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"levelId\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"mark\",\"type\":\"uint256\"}],\"name\":\"passed_mark\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"msicilia.eth\",\"kind\":\"dev\",\"methods\":{\"add_run(string,string,string,string,uint256)\":{\"params\":{\"_gameId\":\"The id of the game.\",\"_levelId\":\"The id of the level of the game.\",\"_runId\":\"The id of the run for that level of the game.\",\"_userId\":\"Speedrunner id.\",\"mark\":\"The time recorded for that run\"}},\"add_runner(string,string,address)\":{\"params\":{\"_addr\":\"An Ethereum address associated to the user.\",\"_userId\":\"The SpeedRunner id of the user.\",\"_userName\":\"The name of the SpeedRun.com user\"}},\"passed_mark(string,string,string,uint256)\":{\"params\":{\"gameId\":\"The id of the game.\",\"levelId\":\"The id of the level of the game.\",\"mark\":\"The time ckeched. \",\"userId\":\"The SppedRun.com `userId` being queried.\"},\"returns\":{\"_0\":\"`true` if there is verified evidence in the repo that the user has a mark equal or better than `mark`.\"}}},\"title\":\"A repository of data from Speedrun.com\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"passed_mark(string,string,string,uint256)\":{\"notice\":\"It returns `false` if no evidence found in the smart contract (but it might be that such evidence is yet at SpeedRun.com)\"}},\"notice\":\"This interface defines the data structures and the interface of data repos for SpeedRun.com.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"/Users/msicilia/Desktop/dev/lrn/consensys/blockchain-developer-bootcamp-final-project/contracts/ISpeedRunRepo.sol\":\"ISpeedRunRepo\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/msicilia/Desktop/dev/lrn/consensys/blockchain-developer-bootcamp-final-project/contracts/ISpeedRunRepo.sol\":{\"keccak256\":\"0x9330064624ce249db8be3e9765f3718fe4769995cb1c3288b8ee134616476710\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://0a3bf233d8a8f7199806ceee8d7eb5023dfea06b23bea73cf4cfc8d56a04b8f7\",\"dweb:/ipfs/QmRbDnkp8mJaWQxhBWDQzLFPcFui2pk77WRudNs62EaJEa\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.9+commit.e5eed63a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_userId\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_gameId\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_levelId\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_runId\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"mark\",\"type\":\"uint256\"}],\"name\":\"add_run\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_userName\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_userId\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"_addr\",\"type\":\"address\"}],\"name\":\"add_runner\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"userId\",\"type\":\"string\"}],\"name\":\"get_runner_address\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"userId\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"gameId\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"levelId\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"mark\",\"type\":\"uint256\"}],\"name\":\"passed_mark\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"msicilia.eth\",\"kind\":\"dev\",\"methods\":{\"add_run(string,string,string,string,uint256)\":{\"params\":{\"_gameId\":\"The id of the game.\",\"_levelId\":\"The id of the level of the game.\",\"_runId\":\"The id of the run for that level of the game.\",\"_userId\":\"Speedrunner id.\",\"mark\":\"The time recorded for that run\"}},\"add_runner(string,string,address)\":{\"params\":{\"_addr\":\"An Ethereum address associated to the user.\",\"_userId\":\"The SpeedRunner id of the user.\",\"_userName\":\"The name of the SpeedRun.com user\"}},\"get_runner_address(string)\":{\"params\":{\"userId\":\"The SppedRun.com `userId` being queried.\"}},\"passed_mark(string,string,string,uint256)\":{\"params\":{\"gameId\":\"The id of the game.\",\"levelId\":\"The id of the level of the game.\",\"mark\":\"The time ckeched. \",\"userId\":\"The SppedRun.com `userId` being queried.\"},\"returns\":{\"_0\":\"`true` if there is verified evidence in the repo that the user has a mark equal or better than `mark`.\"}}},\"title\":\"A repository of data from Speedrun.com\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"passed_mark(string,string,string,uint256)\":{\"notice\":\"It returns `false` if no evidence found in the smart contract (but it might be that such evidence is yet at SpeedRun.com)\"}},\"notice\":\"This interface defines the data structures and the interface of data repos for SpeedRun.com.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"/Users/msicilia/Desktop/dev/lrn/consensys/blockchain-developer-bootcamp-final-project/contracts/ISpeedRunRepo.sol\":\"ISpeedRunRepo\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/msicilia/Desktop/dev/lrn/consensys/blockchain-developer-bootcamp-final-project/contracts/ISpeedRunRepo.sol\":{\"keccak256\":\"0x579ef1bc54eba67806447204b5d42ace8b152e8ff7f0f7849f192e9e567da2dc\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://8ddcb3265cf9402aa04aca472b38d1954b931b3cda7ea3ef6c40e52224b78547\",\"dweb:/ipfs/QmeAUL4ViLFkDR2X8dP2ujXSeyAMmfwT8TBc2ugUqiy3Co\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "immutableReferences": {},
@@ -100,16 +119,16 @@
   "deployedGeneratedSources": [],
   "sourceMap": "",
   "deployedSourceMap": "",
-  "source": "// SPDX-License-Identifier: GPL-3.0\npragma solidity ^0.8.9;\n/// @title A repository of data from Speedrun.com\n/// @author msicilia.eth\n/// @notice This interface defines the data structures and the interface of data repos for SpeedRun.com.\ninterface ISpeedRunRepo{\n    /// @notice This is minimal information from a SpeedRun.com user.\n    /// @dev Note that username corresponds to `international` names according to SpeedRun API. \n    /// @dev Note field `userName` is not strictly necessary, but is used for the readability of events. \n    struct SpeedRunner{\n        bool isRunner; // just to decide if this is a valid runner.\n        string userName; \n        string userId;\n        address addr;\n    }\n    /// @notice This is minimal information from a concrete speed run of `userId`. \n    /// @dev Note Field `primaryTime` is the one used in the leaderboards at SpeedRun.com. \n    /// @dev Note Field `primaryTime` is in seconds, the API allows for miliseconds (float) but they are to be truncated.\n    struct Run{\n        bool isRun; // just to decide if this is a valid runner.\n        string gameId;\n        string levelId;\n        string runId;\n        uint primaryTime;\n        string userId;\n    }\n    /// @param _userName The name of the SpeedRun.com user\n    /// @param _userId The SpeedRunner id of the user.\n    /// @param _addr An Ethereum address associated to the user.\n    function add_runner(string calldata _userName, string calldata _userId, address _addr) external;\n\n    /// @param _userId Speedrunner id.\n    /// @param _gameId The id of the game.\n    /// @param _levelId The id of the level of the game.\n    /// @param _runId The id of the run for that level of the game.\n    /// @param mark The time recorded for that run\n    function add_run(string calldata _userId, string calldata _gameId, string calldata _levelId, string calldata _runId, uint mark) external;\n\n    /// @param userId The SppedRun.com `userId` being queried.\n    /// @param gameId The id of the game.\n    /// @param levelId The id of the level of the game.\n    /// @param mark The time ckeched. \n    /// @return `true` if there is verified evidence in the repo that the user has a mark equal or better than `mark`.\n    /// @notice It returns `false` if no evidence found in the smart contract (but it might be that such evidence is yet at SpeedRun.com)\n    function  passed_mark(string calldata userId, string calldata gameId, string calldata levelId, uint mark) external view returns (bool);\n}",
+  "source": "// SPDX-License-Identifier: GPL-3.0\npragma solidity ^0.8.9;\n/// @title A repository of data from Speedrun.com\n/// @author msicilia.eth\n/// @notice This interface defines the data structures and the interface of data repos for SpeedRun.com.\ninterface ISpeedRunRepo{\n    /// @notice This is minimal information from a SpeedRun.com user.\n    /// @dev Note that username corresponds to `international` names according to SpeedRun API. \n    /// @dev Note field `userName` is not strictly necessary, but is used for the readability of events. \n    struct SpeedRunner{\n        bool isRunner; // just to decide if this is a valid runner.\n        string userName; \n        string userId;\n        address addr;\n    }\n    /// @notice This is minimal information from a concrete speed run of `userId`. \n    /// @dev Note Field `primaryTime` is the one used in the leaderboards at SpeedRun.com. \n    /// @dev Note Field `primaryTime` is in seconds, the API allows for miliseconds (float) but they are to be truncated.\n    struct Run{\n        bool isRun; // just to decide if this is a valid runner.\n        string gameId;\n        string levelId;\n        string runId;\n        uint primaryTime;\n        string userId;\n    }\n    /// @param _userName The name of the SpeedRun.com user\n    /// @param _userId The SpeedRunner id of the user.\n    /// @param _addr An Ethereum address associated to the user.\n    function add_runner(string calldata _userName, string calldata _userId, address _addr) external;\n\n    /// @param _userId Speedrunner id.\n    /// @param _gameId The id of the game.\n    /// @param _levelId The id of the level of the game.\n    /// @param _runId The id of the run for that level of the game.\n    /// @param mark The time recorded for that run\n    function add_run(string calldata _userId, string calldata _gameId, string calldata _levelId, string calldata _runId, uint mark) external;\n\n    /// @param userId The SppedRun.com `userId` being queried.\n    /// @param gameId The id of the game.\n    /// @param levelId The id of the level of the game.\n    /// @param mark The time ckeched. \n    /// @return `true` if there is verified evidence in the repo that the user has a mark equal or better than `mark`.\n    /// @notice It returns `false` if no evidence found in the smart contract (but it might be that such evidence is yet at SpeedRun.com)\n    function  passed_mark(string calldata userId, string calldata gameId, string calldata levelId, uint mark) external view returns (bool);\n\n    /// @param userId The SppedRun.com `userId` being queried.\n    function get_runner_address(string calldata userId) external view returns (address);\n}",
   "sourcePath": "/Users/msicilia/Desktop/dev/lrn/consensys/blockchain-developer-bootcamp-final-project/contracts/ISpeedRunRepo.sol",
   "ast": {
     "absolutePath": "/Users/msicilia/Desktop/dev/lrn/consensys/blockchain-developer-bootcamp-final-project/contracts/ISpeedRunRepo.sol",
     "exportedSymbols": {
       "ISpeedRunRepo": [
-        63
+        71
       ]
     },
-    "id": 64,
+    "id": 72,
     "license": "GPL-3.0",
     "nodeType": "SourceUnit",
     "nodes": [
@@ -137,9 +156,9 @@
           "text": "@title A repository of data from Speedrun.com\n @author msicilia.eth\n @notice This interface defines the data structures and the interface of data repos for SpeedRun.com."
         },
         "fullyImplemented": false,
-        "id": 63,
+        "id": 71,
         "linearizedBaseContracts": [
-          63
+          71
         ],
         "name": "ISpeedRunRepo",
         "nameLocation": "250:13:0",
@@ -262,7 +281,7 @@
             "name": "SpeedRunner",
             "nameLocation": "549:11:0",
             "nodeType": "StructDefinition",
-            "scope": 63,
+            "scope": 71,
             "src": "542:164:0",
             "visibility": "public"
           },
@@ -436,7 +455,7 @@
             "name": "Run",
             "nameLocation": "1016:3:0",
             "nodeType": "StructDefinition",
-            "scope": 63,
+            "scope": 71,
             "src": "1009:200:0",
             "visibility": "public"
           },
@@ -550,7 +569,7 @@
               "parameters": [],
               "src": "1488:0:0"
             },
-            "scope": 63,
+            "scope": 71,
             "src": "1393:96:0",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -719,7 +738,7 @@
               "parameters": [],
               "src": "1889:0:0"
             },
-            "scope": 63,
+            "scope": 71,
             "src": "1753:137:0",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -889,28 +908,118 @@
               ],
               "src": "2481:6:0"
             },
-            "scope": 63,
+            "scope": 71,
             "src": "2353:135:0",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 63,
+              "nodeType": "StructuredDocumentation",
+              "src": "2494:58:0",
+              "text": "@param userId The SppedRun.com `userId` being queried."
+            },
+            "functionSelector": "cc8ec240",
+            "id": 70,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "get_runner_address",
+            "nameLocation": "2566:18:0",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 66,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 65,
+                  "mutability": "mutable",
+                  "name": "userId",
+                  "nameLocation": "2601:6:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70,
+                  "src": "2585:22:0",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 64,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2585:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2584:24:0"
+            },
+            "returnParameters": {
+              "id": 69,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 68,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70,
+                  "src": "2632:7:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 67,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2632:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2631:9:0"
+            },
+            "scope": 71,
+            "src": "2557:84:0",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 64,
-        "src": "240:2250:0",
+        "scope": 72,
+        "src": "240:2403:0",
         "usedErrors": []
       }
     ],
-    "src": "36:2454:0"
+    "src": "36:2607:0"
   },
   "legacyAST": {
     "absolutePath": "/Users/msicilia/Desktop/dev/lrn/consensys/blockchain-developer-bootcamp-final-project/contracts/ISpeedRunRepo.sol",
     "exportedSymbols": {
       "ISpeedRunRepo": [
-        63
+        71
       ]
     },
-    "id": 64,
+    "id": 72,
     "license": "GPL-3.0",
     "nodeType": "SourceUnit",
     "nodes": [
@@ -938,9 +1047,9 @@
           "text": "@title A repository of data from Speedrun.com\n @author msicilia.eth\n @notice This interface defines the data structures and the interface of data repos for SpeedRun.com."
         },
         "fullyImplemented": false,
-        "id": 63,
+        "id": 71,
         "linearizedBaseContracts": [
-          63
+          71
         ],
         "name": "ISpeedRunRepo",
         "nameLocation": "250:13:0",
@@ -1063,7 +1172,7 @@
             "name": "SpeedRunner",
             "nameLocation": "549:11:0",
             "nodeType": "StructDefinition",
-            "scope": 63,
+            "scope": 71,
             "src": "542:164:0",
             "visibility": "public"
           },
@@ -1237,7 +1346,7 @@
             "name": "Run",
             "nameLocation": "1016:3:0",
             "nodeType": "StructDefinition",
-            "scope": 63,
+            "scope": 71,
             "src": "1009:200:0",
             "visibility": "public"
           },
@@ -1351,7 +1460,7 @@
               "parameters": [],
               "src": "1488:0:0"
             },
-            "scope": 63,
+            "scope": 71,
             "src": "1393:96:0",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -1520,7 +1629,7 @@
               "parameters": [],
               "src": "1889:0:0"
             },
-            "scope": 63,
+            "scope": 71,
             "src": "1753:137:0",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -1690,19 +1799,109 @@
               ],
               "src": "2481:6:0"
             },
-            "scope": 63,
+            "scope": 71,
             "src": "2353:135:0",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 63,
+              "nodeType": "StructuredDocumentation",
+              "src": "2494:58:0",
+              "text": "@param userId The SppedRun.com `userId` being queried."
+            },
+            "functionSelector": "cc8ec240",
+            "id": 70,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "get_runner_address",
+            "nameLocation": "2566:18:0",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 66,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 65,
+                  "mutability": "mutable",
+                  "name": "userId",
+                  "nameLocation": "2601:6:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70,
+                  "src": "2585:22:0",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 64,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2585:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2584:24:0"
+            },
+            "returnParameters": {
+              "id": 69,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 68,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70,
+                  "src": "2632:7:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 67,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2632:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2631:9:0"
+            },
+            "scope": 71,
+            "src": "2557:84:0",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 64,
-        "src": "240:2250:0",
+        "scope": 72,
+        "src": "240:2403:0",
         "usedErrors": []
       }
     ],
-    "src": "36:2454:0"
+    "src": "36:2607:0"
   },
   "compiler": {
     "name": "solc",
@@ -1710,7 +1909,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.3",
-  "updatedAt": "2022-01-11T17:53:15.017Z",
+  "updatedAt": "2022-01-13T13:14:11.937Z",
   "devdoc": {
     "author": "msicilia.eth",
     "kind": "dev",
@@ -1729,6 +1928,11 @@
           "_addr": "An Ethereum address associated to the user.",
           "_userId": "The SpeedRunner id of the user.",
           "_userName": "The name of the SpeedRun.com user"
+        }
+      },
+      "get_runner_address(string)": {
+        "params": {
+          "userId": "The SppedRun.com `userId` being queried."
         }
       },
       "passed_mark(string,string,string,uint256)": {

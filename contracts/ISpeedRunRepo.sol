@@ -43,4 +43,7 @@ interface ISpeedRunRepo{
     /// @return `true` if there is verified evidence in the repo that the user has a mark equal or better than `mark`.
     /// @notice It returns `false` if no evidence found in the smart contract (but it might be that such evidence is yet at SpeedRun.com)
     function  passed_mark(string calldata userId, string calldata gameId, string calldata levelId, uint mark) external view returns (bool);
+
+    /// @param userId The SppedRun.com `userId` being queried.
+    function get_runner_address(string calldata userId) external view returns (address);
 }

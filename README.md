@@ -1,13 +1,17 @@
+
+
 # Speed the speedrunners!
 ## Motivation in a nutshell
 
-The project starts from the idea of how gamers that engage in **speedrunning** (competing in passing games or levels as quick or effectively as possible) could be motivated with rewards in crypto that would be automatically distributed using smart contracts. 
+The project starts from the idea that gamers that engage in **speedrunning** (competing in passing games or levels as quickly or effectively as possible) could be motivated with rewards in crypto that would be automatically released using smart contracts. 
 
-Typically, somebody would post a challenge (e.g. passing some game level in less than X minutes) for a particular gamer in the blockchain sending some crypto as reward, and that reward may be claimed when the challenge is eventually beat by the user. 
+Typically, somebody would post a challenge (e.g. passing some game level in less than X minutes) for a particular gamer in the blockchain, sending some crypto as reward. And then that reward may be claimed when the challenge is eventually beat by the gamer. <img src="https://www.speedrun.com/images/logo-white.png"
+     alt="SpeedRun.com icon"
+     width="20%" />
 
-This example use case is just one of many possible options. The  variations are endless, e.g. posting challenges to any player, redistributing part of the rewards to losers also, etc. More about the motivation of the use case can be found [here](motivation.md).
+This example use case is just one of many possible options. The variations are endless, e.g. posting challenges to any player and not to a particular one, redistributing part of the rewards to losers also, etc. More about the motivation of the use case can be found [here](motivation.md).
 
-As is evident, **oracles** play a significant role in these use cases. In consequence, the prototype in this project uses [Speedrun.com](https://www.speedrun.com/) as source of data about speedrunners, together with a basic initial implementation using [Chainlink](https://chain.link/) nodes as oracles.
+Obviously, **oracles** play a significant role in these use cases. In consequence, the prototype in this project uses [Speedrun.com](https://www.speedrun.com/) as source of data about speedrunners, together with a basic initial implementation using [Chainlink](https://chain.link/) programming interfaces.
 
 ## Smart contract design
 

@@ -1,3 +1,5 @@
-Contain a deployed_address.txt file 
-which contains the testnet address and network 
-where your contract(s) have been deployed
+The Kovan addresses for the two contracts that are send transactions to appear in the file:
+
+webapp/contract_addresses.json
+
+These are the ones used in the user interface. 

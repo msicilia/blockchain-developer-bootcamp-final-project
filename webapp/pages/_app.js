@@ -1,22 +1,23 @@
 import '../styles/globals.css'
 import Layout from '../components/Layout'
-import { Web3ReactProvider } from '@web3-react/core'
-import Web3 from 'web3'
-import { ethers } from 'ethers';
 
-function getLibrary(provider) {
-  // return new Web3(provider)
-  return new ethers.providers.Web3Provider(provider);
+import { ChainId, DAppProvider } from '@usedapp/core'
+
+
+const config = {
+  supportedChains: [ChainId.Kovan],
+  autoconnect: false,
+  notifications: {
+    expirationPeriod: 50000,
+  }
 }
-
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Web3ReactProvider getLibrary={getLibrary}>
-      <Layout>
+    <DAppProvider config={config}>      <Layout>
           <Component {...pageProps} />
       </Layout>
-    </Web3ReactProvider>
+    </DAppProvider>
   )
   //return (<Layout>
   //          <Component {...pageProps} />

@@ -30,3 +30,17 @@
   color: #fff;
 
  }
+
+ .notif {
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.66);
+  color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: small;
+}
+
+.notif a {
+  text-decoration: underline;
+}

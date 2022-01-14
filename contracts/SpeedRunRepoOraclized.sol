@@ -93,5 +93,13 @@ contract SpeedRunRepoOraclized is ChainlinkClient, ISpeedRunRepo {
         //runners[temp.userId] = SpeedRunner(temp.userName, temp.userId, address(_addr));
 
     }
+  
+    function runner_registered(string memory _userId) public view returns (bool){
+        return runners[_userId].isRunner;
+     }
 
+    function get_runner_address(string memory _userId) override external view returns (address){
+         require(runner_registered(_userId));
+         return runners[_userId].addr;
+     }
 }

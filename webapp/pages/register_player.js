@@ -1,17 +1,17 @@
 import React from 'react'
 import { useRef, useState } from 'react';
 import UserElement from '../components/UserElement.js'
-import useIsValidNetwork from '../hooks/useIsValidNetwork';
+import {  useEthers } from '@usedapp/core'
 
 
 const Register_player = () => {
     const [getResult, setGetResult] = useState(null);
     const get_name = useRef(null);
-    const { isValidNetwork } = useIsValidNetwork();
-
+    const { active } = useEthers()
+    
 
     const getSpeedRunners = async () => {
-        if (isValidNetwork){
+        if (active){
         const name = get_name.current.value;
         const res = await fetch(`https://www.speedrun.com/api/v1/users?name=${name}`);
         const users = await res.json();

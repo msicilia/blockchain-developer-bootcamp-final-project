@@ -23,9 +23,9 @@ The considerations on security and attack vectors [can be found here](avoiding_c
 The main folder contains the [truffle](https://trufflesuite.com/)-generated structure for the project. The `webapp` folder is the [Next.js](https://nextjs.org/) frontend for the DApp.  
 
 ## Access the prototype frontend
-The frontend of the prototype is deployed at [this address]().
+The frontend of the prototype is deployed at [this address](https://blockchain-developer-bootcamp-final-project-one.vercel.app/).
 
-A screencast with a short walkthrough [can be found here]().
+A screencast with a short walkthrough [can be found here](https://youtu.be/ASYqWMS14BU).
 
 ## Deployment and tests
 
